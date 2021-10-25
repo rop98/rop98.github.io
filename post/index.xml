@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Reece&#39;s Blog</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Reece&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>My Name</copyright>
+    <lastBuildDate>Mon, 25 Oct 2021 00:13:50 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running Vim notes</title>
+      <link>/2021/10/25/vim/</link>
+      <pubDate>Mon, 25 Oct 2021 00:13:50 +0000</pubDate>
+      
+      <guid>/2021/10/25/vim/</guid>
+      <description>Vim for college pattern matching is amazing \d and :help regular Character classes:	*/character-classes* magic nomagic	matches ~ |/\i|	\i	\i	identifier character (see &#39;isident&#39; option) |/\I|	\I	\I	like &amp;quot;\i&amp;quot;, but excluding digits |/\k|	\k	\k	keyword character (see &#39;iskeyword&#39; option) |/\K|	\K	\K	like &amp;quot;\k&amp;quot;, but excluding digits |/\f|	\f	\f	file name character (see &#39;isfname&#39; option) |/\F|	\F	\F	like &amp;quot;\f&amp;quot;, but excluding digits |/\p|	\p	\p	printable character (see &#39;isprint&#39; option) |/\P|	\P	\P	like &amp;quot;\p&amp;quot;, but excluding digits |/\s|	\s	\s	whitespace character: &amp;lt;Space&amp;gt; and &amp;lt;Tab&amp;gt; |/\S|	\S	\S	non-whitespace character; opposite of \s |/\d|	\d	\d	digit:	[0-9] |/\D|	\D	\D	non-digit:	[^0-9] |/\x|	\x	\x	hex digit:	[0-9A-Fa-f] |/\X|	\X	\X	non-hex digit:	[^0-9A-Fa-f] |/\o|	\o	\o	octal digit:	[0-7] |/\O|	\O	\O	non-octal digit:	[^0-7] |/\w|	\w	\w	word character:	[0-9A-Za-z_] |/\W|	\W	\W	non-word character:	[^0-9A-Za-z_] |/\h|	\h	\h	head of word character:	[A-Za-z_] |/\H|	\H	\H	non-head of word character:	[^A-Za-z_] |/\a|	\a	\a	alphabetic character:	[A-Za-z] |/\A|	\A	\A	non-alphabetic character:	[^A-Za-z] |/\l|	\l	\l	lowercase character:	[a-z] |/\L|	\L	\L	non-lowercase character:	[^a-z] |/\u|	\u	\u	uppercase character:	[A-Z] |/\U|	\U	\U	non-uppercase character	[^A-Z] |/\_|	\_x	\_x	where x is any of the characters above: character class with end-of-line included (end of character classes) magic nomagic	matches ~ |/\e|	\e	\e	&amp;lt;Esc&amp;gt; |/\t|	\t	\t	&amp;lt;Tab&amp;gt; |/\r|	\r	\r	&amp;lt;CR&amp;gt; |/\b|	\b	\b	&amp;lt;BS&amp;gt; |/\n|	\n	\n	end-of-line |/~|	~	\~	last given substitute string |/\1|	\1	\1	same string as matched by first \(\) |/\2|	\2	\2	Like &amp;quot;\1&amp;quot;, but uses second \(\)  so vim has the ability to do quick pattern matching with :s and with searching vim also can repeat the last : command with @:  general vim :set spell!</description>
+    </item>
+    
+    <item>
+      <title>Samsung Galaxy Tab 2 custom ROMs and thoughts</title>
+      <link>/2021/05/22/instructions_samsung_galaxy_tab_2/</link>
+      <pubDate>Sat, 22 May 2021 00:13:50 +0000</pubDate>
+      
+      <guid>/2021/05/22/instructions_samsung_galaxy_tab_2/</guid>
+      <description>Installing roms on Samsung galaxy tab 2 and thoughts on the device  https://www.droidthunder.com/flash-custom-rom-twrp-recovery/ https://androidfilehost.com/?w=profile&amp;amp;uid=23329332407587552 http://andi34.github.io/roms_tab2_slim.html http://andi34.github.io  Recently I bought a second hand samsung galaxy tab 2 as a way to get some coding and reading done in more places.
+It&amp;rsquo;s size is only 2.5 inches smaller than my smallest laptop, which is also my main workhorse (Thinkpad x260).
+I did not like the original ROM running on it, so I decided to see if more performance could be squeezed out of it.</description>
+    </item>
+    
+    <item>
+      <title>Short notes on make files</title>
+      <link>/2021/05/22/make/</link>
+      <pubDate>Sat, 22 May 2021 00:13:50 +0000</pubDate>
+      
+      <guid>/2021/05/22/make/</guid>
+      <description>Make files for automation for projects (installing deleting options) General Layout  OUTPUT: OPTIONAL DEPENDENCIES COMMAND TO PRODUCE OUTPUT tester.text: echo &amp;quot;this is a test&amp;quot; &amp;gt; tester.txt install: cp file ~/bin/ uninstall: rm file ~/bin/ DEPENDANCIES  i think dependancies are mapped to targets it will run the dependancy first if you do make tester2.txt  tester2.txt: tester.txt cat tester.txt &amp;gt; tester2.txt tester.txt: echo &amp;quot;this is a test&amp;quot; &amp;gt; tester.txt MACROS  Sort of like variables in other languages set a macro / assign a variable with &amp;lsquo;var = value&amp;rsquo; use a macro / use a var with $(var) VARIABLENAME = VALUE OF VARIABLE they expand using syntax $(VARIABLENAME)  TMP = tester1.</description>
+    </item>
+    
+    <item>
+      <title>Short notes on recutils </title>
+      <link>/2021/05/22/recutilsnotes/</link>
+      <pubDate>Sat, 22 May 2021 00:13:50 +0000</pubDate>
+      
+      <guid>/2021/05/22/recutilsnotes/</guid>
+      <description>References  structured-text-tools/README.md at master · dbohdan/structured-text-tools · GitHub  GNU Recutils - GNU Project - Free Software Foundation  GNU Recutils: Top  GNU Recutils: Joining Records GNU Recutils: A Little Example GNU Recutils: Foreign Keys GNU Recutils: Foreign Keys        Basic file structure %rec: Book #%key: Id #%type: Id int #%auto: Id #%unique: ISBN %mandatory: Title %type: Location enum loaned home unknown %doc: + A book in my personal collection.</description>
+    </item>
+    
+    <item>
+      <title>Backing up and compressing phone pictures</title>
+      <link>/2021/04/22/phonecamera_backup/</link>
+      <pubDate>Thu, 22 Apr 2021 00:13:50 +0000</pubDate>
+      
+      <guid>/2021/04/22/phonecamera_backup/</guid>
+      <description>Backing up and moving all the media on my phone to the external hard drive When your computer/phone is unresponsive due to the large number of files it might work to use adb, slightly more complicated due to lack of some of the coreutils.
+Another solution is to use a server app and connect via the web interface and copy over that way. I like to use X-plore
+Normal way would be to plug it in via USB and copy over that way.</description>
+    </item>
+    
+    <item>
+      <title>Notes on Kotlin for sololearn course</title>
+      <link>/2021/02/25/kotlin/</link>
+      <pubDate>Thu, 25 Feb 2021 00:13:50 +0000</pubDate>
+      
+      <guid>/2021/02/25/kotlin/</guid>
+      <description>Learning Kotlin through sololearn 2021-02-25 Thu 09:19 AM Printing like in java (println(&amp;quot;&amp;quot;))  println(&amp;ldquo;strings&amp;rdquo;+variable_casted_to_string) println(variable) println(variable+&amp;quot; &amp;ldquo;+variable1) println(&amp;ldquo;numbers in from top to bottom \n 1 \n 2 \n 3&amp;rdquo;)  \n \t for newline and tab
+Main function fun main(Args Array:&amp;lt;String&amp;gt;){ // body statements } 2021-02-26 Fri 11:10 you do not need to have args in the bracket of main, if you are not passing anything into it.
+2021-02-26 Fri 11:11 In order for the kotlin interpretor (kotlin) to run on a file it needs to have the .</description>
+    </item>
+    
+    <item>
+      <title>ImageMagick cheatsheet</title>
+      <link>/2020/12/06/imagemagick/</link>
+      <pubDate>Sun, 06 Dec 2020 00:13:50 +0000</pubDate>
+      
+      <guid>/2020/12/06/imagemagick/</guid>
+      <description>References   Advance ImageMagick
+  ImageMagick Draw
+  ImageMagick Annotation
+  Cheatsheet Change format convert source.png destination.jpg
+Change format batch mogrify -format jpg *.png
+Transparent convert -resize 100% -transparent -strip -quality 90 input.png out.png
+Grayscale convert source.png -colorspace Gray destination.png
+Invert colors: convert input.png -channel RGB -negate output.png
+rotate image (-90 degrees) convert -rotate -90 input.png output.png
+Resize convert image.jpg -resize 1024x768 output_file.jpg convert source.jpg -resize 75% destination.</description>
+    </item>
+    
+    <item>
+      <title>Notes on udemy photography course </title>
+      <link>/2020/06/04/udemyphotography/</link>
+      <pubDate>Thu, 04 Jun 2020 00:13:50 +0000</pubDate>
+      
+      <guid>/2020/06/04/udemyphotography/</guid>
+      <description>Types of cameras Compact Cameras  Think of video cameras/ handy cams not high quality not enough creative control  DSLR  Massive / Thick Long Snout, More Creative Control  In-between cameras  Bridge, mirror less, micro 4/3  How it works Explanation:
+Light comes through lens pass through a hole in back of lens (aperture) you can change the size
+Aperture Affects Depth of Field = amount of stuff thats nice and sharp</description>
+    </item>
+    
+    <item>
+      <title>Notes on progress with Inkscape</title>
+      <link>/2020/05/22/inkscape_ideas_0/</link>
+      <pubDate>Fri, 22 May 2020 00:13:50 +0000</pubDate>
+      
+      <guid>/2020/05/22/inkscape_ideas_0/</guid>
+      <description>Struggles with Inkscape The one thing I did not enjoy about working with Inkscape is probably not their fault.
+An issue with how it is distributed among linux distributions.
+As I was just testing it out, I thought an AppImage would be best.
+I discovered it was lacking extension support, luckily the community also had this problem.
+Thought reverting to an earlier version would help, it did not.
+Finally, I bit the bullet and decided to install the native package on arch.</description>
+    </item>
+    
+    <item>
+      <title>New Ideas for learning Godot</title>
+      <link>/2020/05/21/godot_ideas_0/</link>
+      <pubDate>Thu, 21 May 2020 00:13:50 +0000</pubDate>
+      
+      <guid>/2020/05/21/godot_ideas_0/</guid>
+      <description>Obvious ones Double Jump - Learned from &amp;lsquo;TheBaldChick - Godot 3: How to make your character double jump&amp;rsquo; 2020-05-22 This took forever. I&amp;rsquo;ve been trying to add double jump to any game since I downloaded godot.
+I learned a lot just going through the basics and now I understand the underlying logic a bit more.
+Learning from multiple sources is a good and bad thing.
+If I try to follow just one way of doing it, it will be better for that one way but my knowledge is limited in breadth.</description>
+    </item>
+    
+    <item>
+      <title>New Ideas for this Hugo Blog</title>
+      <link>/2020/05/21/hugo_ideas_0/</link>
+      <pubDate>Thu, 21 May 2020 00:13:50 +0000</pubDate>
+      
+      <guid>/2020/05/21/hugo_ideas_0/</guid>
+      <description>I need to figure out how to change the post time in a simple way, this T and Z business is incredibly confusing. (EDIT) it was not too difficult, it is just set to another timezone, so, it won&amp;rsquo;t publish until it is actually that time or later.
+Sites I found interesting  Bryan Lundukes website Beepboop.xyz (This was also done using orgmode) Rakhim/emacscast (This was done using orgmode) HexDSL (Using blop) GideonWolfe (Hugo, Terminal theme)  Bryan Lunduke Journal  The site strikes me as different because of the odd layout and colorscheme.</description>
+    </item>
+    
+    <item>
+      <title>Syncthing and How I use it</title>
+      <link>/2020/05/21/syncthing_overview/</link>
+      <pubDate>Thu, 21 May 2020 00:13:50 +0000</pubDate>
+      
+      <guid>/2020/05/21/syncthing_overview/</guid>
+      <description>Overview Syncthing is like megasync, dropbox or onedrive but using your own storage,
+Syncthing is open source, syncthing can be run locally within your LAN without using global data. In order to use it with only local data, UPNP needs to be enabled on the local network. This can be set usually on 10.0.0.2 or by connecting to your router. Then in the advanced settings, UPNP will be found alongside the DLNA settings.</description>
+    </item>
+    
+    <item>
+      <title>Vim notes</title>
+      <link>/2020/05/21/vim_00/</link>
+      <pubDate>Thu, 21 May 2020 00:13:50 +0000</pubDate>
+      
+      <guid>/2020/05/21/vim_00/</guid>
+      <description>Spell checking in vim So Vim has a nice way to handle spell checking with support for
+ regional spelling via underline. good and bad word lists via zw and zg. different language dictionaries via spelllang=lang  It is toggled in command mode via:
+:set spell!  Basic commands
+]s next spelling mistake &amp;quot;including regional [s prev spelling mistake &amp;quot;including regional ]S next spelling mistake &amp;quot;not including regional ]S prev spelling mistake &amp;quot;not including regional  Vim&amp;rsquo;s spell checker also has the ability to add words to the dictionary.</description>
+    </item>
+    
+  </channel>
+</rss>

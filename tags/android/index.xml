@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on Reece&#39;s Blog</title>
+    <link>/tags/android/</link>
+    <description>Recent content in Android on Reece&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>My Name</copyright>
+    <lastBuildDate>Sat, 22 May 2021 00:13:50 +0000</lastBuildDate><atom:link href="/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Samsung Galaxy Tab 2 custom ROMs and thoughts</title>
+      <link>/2021/05/22/instructions_samsung_galaxy_tab_2/</link>
+      <pubDate>Sat, 22 May 2021 00:13:50 +0000</pubDate>
+      
+      <guid>/2021/05/22/instructions_samsung_galaxy_tab_2/</guid>
+      <description>Installing roms on Samsung galaxy tab 2 and thoughts on the device  https://www.droidthunder.com/flash-custom-rom-twrp-recovery/ https://androidfilehost.com/?w=profile&amp;amp;uid=23329332407587552 http://andi34.github.io/roms_tab2_slim.html http://andi34.github.io  Recently I bought a second hand samsung galaxy tab 2 as a way to get some coding and reading done in more places.
+It&amp;rsquo;s size is only 2.5 inches smaller than my smallest laptop, which is also my main workhorse (Thinkpad x260).
+I did not like the original ROM running on it, so I decided to see if more performance could be squeezed out of it.</description>
+    </item>
+    
+    <item>
+      <title>Backing up and compressing phone pictures</title>
+      <link>/2021/04/22/phonecamera_backup/</link>
+      <pubDate>Thu, 22 Apr 2021 00:13:50 +0000</pubDate>
+      
+      <guid>/2021/04/22/phonecamera_backup/</guid>
+      <description>Backing up and moving all the media on my phone to the external hard drive When your computer/phone is unresponsive due to the large number of files it might work to use adb, slightly more complicated due to lack of some of the coreutils.
+Another solution is to use a server app and connect via the web interface and copy over that way. I like to use X-plore
+Normal way would be to plug it in via USB and copy over that way.</description>
+    </item>
+    
+  </channel>
+</rss>

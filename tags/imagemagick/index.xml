@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Imagemagick on Reece&#39;s Blog</title>
+    <link>/tags/imagemagick/</link>
+    <description>Recent content in Imagemagick on Reece&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>My Name</copyright>
+    <lastBuildDate>Sun, 06 Dec 2020 00:13:50 +0000</lastBuildDate><atom:link href="/tags/imagemagick/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ImageMagick cheatsheet</title>
+      <link>/2020/12/06/imagemagick/</link>
+      <pubDate>Sun, 06 Dec 2020 00:13:50 +0000</pubDate>
+      
+      <guid>/2020/12/06/imagemagick/</guid>
+      <description>References   Advance ImageMagick
+  ImageMagick Draw
+  ImageMagick Annotation
+  Cheatsheet Change format convert source.png destination.jpg
+Change format batch mogrify -format jpg *.png
+Transparent convert -resize 100% -transparent -strip -quality 90 input.png out.png
+Grayscale convert source.png -colorspace Gray destination.png
+Invert colors: convert input.png -channel RGB -negate output.png
+rotate image (-90 degrees) convert -rotate -90 input.png output.png
+Resize convert image.jpg -resize 1024x768 output_file.jpg convert source.jpg -resize 75% destination.</description>
+    </item>
+    
+  </channel>
+</rss>

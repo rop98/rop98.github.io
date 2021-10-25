@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Syncthing and How I use it &middot; </title>
+        <meta name="description" content="Syncthing replaced megasync for me">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.88.1" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Syncthing and How I use it">
+<meta property="og:description" content="Syncthing replaced megasync for me">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/syncthing_overview/">
+        <link rel="stylesheet" href="dist/site.css">
+        <link rel="stylesheet" href="dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="Reece&#39;s Blog" href="">Reece&#39;s Blog</a>
+                            </h1>
+                        
+                        <a class="button-square" href="index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/XXX" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/XXX" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" title="Email" href="mailto:XXX@email.com">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Getting Started with Hugo" href="/hugoisforlovers/">Getting Started with Hugo</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Syncthing and How I use it</h1>
+    
+        <p class="post-description" itemprop="description">Syncthing replaced megasync for me</p>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2020-05-21" itemprop="datePublished">Thu, May 21, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">Reece Petersen</a>
+            </span>
+        </span>
+    </p>
+    
+        <p class="post-reading post-line">
+            <span>Estimated reading time: 2 min</span>
+        </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <h2 id="overview">Overview</h2>
+<p>Syncthing is like megasync, dropbox or onedrive but using your own storage,</p>
+<p>Syncthing is open source, syncthing can be run locally within your LAN without using global data.
+In order to use it with only local data, UPNP needs to be enabled on the local network. This can be
+set usually on 10.0.0.2 or by connecting to your router. Then in the advanced settings,
+UPNP will be found alongside the DLNA settings. Next in the settings for syncthing turn off the following:</p>
+<ul>
+<li>Enable NAT Traversal</li>
+<li>Global Discovery</li>
+<li>Enable Relaying</li>
+</ul>
+<p>You should just be left with Local Discovery.</p>
+<p>Setting this across all devices making use of syncthing will ensure you don&rsquo;t make use of Global data and
+you are only operating within the confines of a local network. This reduces attack surface area.</p>
+<p>If you need more convenience it will make use of the global servers and relaying in order to find your devices
+and sync them. When this is in effect, the default. Ports are to be changed according to this archwiki extract.</p>
+<blockquote>
+<p>Use a different listen address port (<a href="https://docs.syncthing.net/users/config.html#listen-addresses">https://docs.syncthing.net/users/config.html#listen-addresses</a>)
+for each machine, like tcp://:22010 , tcp://:22011 , tcp://:22012  and so forth. This will differentiate the
+nodes on the global discovery servers and avoid the &ldquo;Connected to myself - should not happen&rdquo; message on
+the other local devices whenever they leave the LAN.
+Enable if possible UPnP port forwarding or manually forward each port to the right machine on the LAN. When</p>
+</blockquote>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Syncthing%20and%20How%20I%20use%20it&url=%2fsyncthing_overview%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2fsyncthing_overview%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=%2fsyncthing_overview%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="Reece&#39;s Blog" href="">Reece&#39;s Blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2020 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/jquery.fitvids.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
+

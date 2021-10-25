@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Reece&#39;s Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="/img/home-bg-2.png">
+    <meta property="twitter:image" content="/img/home-bg-2.png" />
+    
+
+    
+    <meta name="title" content="ImageMagick cheatsheet" />
+    <meta property="og:title" content="ImageMagick cheatsheet" />
+    <meta property="twitter:title" content="ImageMagick cheatsheet" />
+    
+
+    
+    <meta name="description" content="A bunch of useful recipes for imagemagick">
+    <meta property="og:description" content="A bunch of useful recipes for imagemagick" />
+    <meta property="twitter:description" content="A bunch of useful recipes for imagemagick" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Vim, Emacs, Linux, Unix, Flutter, PHP, Javascript, Android, HTML, CSS, Microservice">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>ImageMagick cheatsheet-Devlog | Reece&#39;s Blog</title>
+
+    <link rel="canonical" href="/2020/12/06/imagemagick/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Reece&#39;s Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-2.png')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/tinkering" title="Tinkering">
+                            Tinkering
+                        </a>
+                        
+                        <a class="tag" href="/tags/linux" title="Linux">
+                            Linux
+                        </a>
+                        
+                        <a class="tag" href="/tags/imagemagick" title="Imagemagick">
+                            Imagemagick
+                        </a>
+                        
+                    </div>
+                    <h1>ImageMagick cheatsheet</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                Reece Petersen
+                             
+                            on 
+                            Sunday, December 6, 2020
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h1 id="references">References</h1>
+<ul>
+<li>
+<p><a href="https://opensource.com/article/17/8/imagemagick">Advance ImageMagick</a></p>
+</li>
+<li>
+<p><a href="https://legacy.imagemagick.org/Usage/draw/">ImageMagick Draw</a></p>
+</li>
+<li>
+<p><a href="https://legacy.imagemagick.org/Usage/annotating/">ImageMagick Annotation</a></p>
+</li>
+</ul>
+<h1 id="cheatsheet">Cheatsheet</h1>
+<h2 id="change-format">Change format</h2>
+<p><code>convert source.png destination.jpg</code></p>
+<h2 id="change-format-batch">Change format batch</h2>
+<p><code>mogrify -format jpg *.png</code></p>
+<h2 id="transparent">Transparent</h2>
+<p><code>convert -resize 100% -transparent -strip -quality 90 input.png out.png</code></p>
+<h2 id="grayscale">Grayscale</h2>
+<p><code>convert source.png -colorspace Gray destination.png</code></p>
+<h2 id="invert-colors">Invert colors:</h2>
+<p><code>convert input.png -channel RGB -negate output.png</code></p>
+<h2 id="rotate-image--90-degrees">rotate image (-90 degrees)</h2>
+<p><code>convert -rotate -90 input.png output.png</code></p>
+<h2 id="resize">Resize</h2>
+<pre tabindex="0"><code>convert image.jpg -resize 1024x768 output_file.jpg
+
+convert source.jpg -resize 75% destination.jpg
+</code></pre><h2 id="quality">Quality</h2>
+<p><code>convert image.jpg -quality 75 output_file.jpg</code></p>
+<h2 id="montage-1">Montage 1</h2>
+<p><code>montage image1.jpg image2.jpg image3.jpg image4.jpg output_montage.jpg</code></p>
+<h2 id="montage-2">Montage 2</h2>
+<p><code>montage image1.jpg image2.jpg image3.jpg image4.jpg -geometry +2+2 output_montage.jpg</code></p>
+<h2 id="montage-tiled---vertical-collage-of-2-images">Montage tiled - Vertical collage of 2 images</h2>
+<p><code>montage -mode concatenate -tile 1x image1.jpg image2.jpg output_montage.jpg</code></p>
+<h2 id="advance-montages-httpsopensourcecomarticle179imagemagick-viewing-images">Advance Montages <a href="https://opensource.com/article/17/9/imagemagick-viewing-images">https://opensource.com/article/17/9/imagemagick-viewing-images</a></h2>
+<h2 id="image-to-pdf">Image to PDF</h2>
+<p><code>convert output_montage.jpg output_montage.pdf</code></p>
+<h2 id="image-to-pdf-smaller-file-size">Image to PDF (smaller file size)</h2>
+<p><code>convert -quality 60 *.jpg output.pdf</code></p>
+<h2 id="merging-pdf-files">Merging PDF Files</h2>
+<p><code>gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=temp.pdf pdf1.pdf pdf2.pdf</code></p>
+<h2 id="pdf-page-to-image">PDF page to image</h2>
+<p><code>convert input.pdf[0] output.png</code></p>
+<h2 id="text-to-image-httpslegacyimagemagickorgusagetext">Text to image <a href="https://legacy.imagemagick.org/Usage/text/">https://legacy.imagemagick.org/Usage/text/</a></h2>
+<pre tabindex="0"><code>convert -background lightblue -fill blue -font Candice -size 320x140 \
+          caption:'This text is resized to best fill the space given.' \
+          caption_filled.gif
+          
+convert -background white -fill black -font arial -size 100x100 -gravity center caption:'O' O.png
+
+convert -background white -fill black -font arial -size 100x100 -gravity center caption:'X' X.png
+</code></pre><h1 id="color-to-image-httpslegacyimagemagickorgusagecanvas">Color to image <a href="https://legacy.imagemagick.org/Usage/canvas/">https://legacy.imagemagick.org/Usage/canvas/</a></h1>
+<pre tabindex="0"><code>convert -size 100x100 xc:white test.png
+
+convert -size 100x100 canvas:red test.png
+</code></pre><h1 id="gradients-or-radial-by-using-radial-gradient">Gradients or radial by using radial-gradient</h1>
+<pre tabindex="0"><code>    convert -size 100x100  gradient:blue              gradient_range1.jpg
+    convert -size 100x100  gradient:yellow            gradient_range2.jpg
+    convert -size 100x100  gradient:green-yellow      gradient_range3.jpg
+    convert -size 100x100  gradient:red-blue          gradient_range4.jpg
+    convert -size 100x100  gradient:tomato-steelblue  gradient_range5.jpg
+    convert -size 10x120  gradient:snow-navy          gradient_ice-sea.jpg
+    convert -size 10x120  gradient:gold-firebrick     gradient_burnished.jpg
+    convert -size 10x120  gradient:yellow-limegreen   gradient_grassland.jpg
+    convert -size 10x120  gradient:khaki-tomato       gradient_sunset.jpg
+    convert -size 10x120  gradient:darkcyan-snow      gradient_snow_scape.jpg
+    convert -size 100x100  gradient:blue              gradient_range1.jpg
+    convert -size 100x100  gradient:yellow            gradient_range2.jpg
+    convert -size 100x100  gradient:green-yellow      gradient_range3.jpg
+    convert -size 100x100  gradient:red-blue          gradient_range4.jpg
+    convert -size 100x100  gradient:tomato-steelblue  gradient_range5.jpg
+    convert -size 10x120  gradient:snow-navy          gradient_ice-sea.jpg
+    convert -size 10x120  gradient:gold-firebrick     gradient_burnished.jpg
+    convert -size 10x120  gradient:yellow-limegreen   gradient_grassland.jpg
+    convert -size 10x120  gradient:khaki-tomato       gradient_sunset.jpg
+    convert -size 10x120  gradient:darkcyan-snow      gradient_snow_scape.jpg
+</code></pre><h1 id="patterns">Patterns</h1>
+<p>convert -size 60x60 pattern:checkerboard -auto-level<br>
++level-colors red,blue     pattern_color_checks.gif</p>
+<p>convert -size 60x60 pattern:hexagons out.png</p>
+<h1 id="command-to-create-thumbnail">Command to create thumbnail:</h1>
+<p><code>convert -geometry 100x100 -quality 100 orgfilename.jpg thumbfilename.jpg</code></p>
+<h1 id="command-to-croping-an-image">Command to croping an image:</h1>
+<p><code>convert orgfilename.jpg -crop 128×128+50+50 cropped.jpg</code></p>
+<h1 id="command-to-watermarking-with-text">Command to watermarking with text:</h1>
+<p><code>convert orgfilename.jpg -font Arial -pointsize 20 -draw &quot;gravity south fill black text 0,12 'Watermark' fill white text 1,11 'Watermark' &quot; wmark_text_drawn.jpg</code></p>
+<h1 id="annotate-image">Annotate image</h1>
+<p><code>$convert in.jpg -fill white -pointsize 20  -annotate +20+30 'Blahblah' out.jpg</code></p>
+<h1 id="replacing-the-background-colour-of-a-transparent-png">Replacing the background colour of a transparent PNG</h1>
+<p><code>convert source.png -background '#ff3399' -flatten destination.png</code></p>
+<h1 id="or-overwrite-all-images-in-a-directory">Or overwrite all images in a directory:</h1>
+<p><code>mogrify -background 'dodgerblue' -flatten *.png</code></p>
+<h1 id="rounded-corners">Rounded corners</h1>
+<p><code>convert input.png -alpha set -virtual-pixel transparent -channel A -blur 0x8  -threshold 50% +channel output.png</code></p>
+<h1 id="and-you-can-batch-round-the-corners-of-images-using-the-following">And you can batch round the corners of images using the following:</h1>
+<p><code>mogrify -alpha set -virtual-pixel transparent -channel A -blur 0x8  -threshold 50% +channel *.png</code></p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2020/06/04/udemyphotography/" data-toggle="tooltip" data-placement="top" title="Notes on udemy photography course ">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2021/02/25/kotlin/" data-toggle="tooltip" data-placement="top" title="Notes on Kotlin for sololearn course">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+<div id="disqus-comment"></div>
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/android" title="android">
+                            android
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/bash" title="bash">
+                            bash
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/design" title="design">
+                            design
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/development" title="development">
+                            development
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/imagemagick" title="imagemagick">
+                            imagemagick
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/inkscape" title="inkscape">
+                            inkscape
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/kotlin" title="kotlin">
+                            kotlin
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/linux" title="linux">
+                            linux
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/photography" title="photography">
+                            photography
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/tinkering" title="tinkering">
+                            tinkering
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/vim" title="vim">
+                            vim
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Reece&#39;s Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:reecepetersen98@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/rop98">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Reece&#39;s Blog 2021
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+</body>
+</html>

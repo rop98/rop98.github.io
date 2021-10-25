@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bash on Reece&#39;s Blog</title>
+    <link>/tags/bash/</link>
+    <description>Recent content in Bash on Reece&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>My Name</copyright>
+    <lastBuildDate>Thu, 22 Apr 2021 00:13:50 +0000</lastBuildDate><atom:link href="/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Backing up and compressing phone pictures</title>
+      <link>/2021/04/22/phonecamera_backup/</link>
+      <pubDate>Thu, 22 Apr 2021 00:13:50 +0000</pubDate>
+      
+      <guid>/2021/04/22/phonecamera_backup/</guid>
+      <description>Backing up and moving all the media on my phone to the external hard drive When your computer/phone is unresponsive due to the large number of files it might work to use adb, slightly more complicated due to lack of some of the coreutils.
+Another solution is to use a server app and connect via the web interface and copy over that way. I like to use X-plore
+Normal way would be to plug it in via USB and copy over that way.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on Reece&#39;s Blog</title>
+    <link>/tags/development/</link>
+    <description>Recent content in Development on Reece&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>My Name</copyright>
+    <lastBuildDate>Sat, 22 May 2021 00:13:50 +0000</lastBuildDate><atom:link href="/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Short notes on make files</title>
+      <link>/2021/05/22/make/</link>
+      <pubDate>Sat, 22 May 2021 00:13:50 +0000</pubDate>
+      
+      <guid>/2021/05/22/make/</guid>
+      <description>Make files for automation for projects (installing deleting options) General Layout  OUTPUT: OPTIONAL DEPENDENCIES COMMAND TO PRODUCE OUTPUT tester.text: echo &amp;quot;this is a test&amp;quot; &amp;gt; tester.txt install: cp file ~/bin/ uninstall: rm file ~/bin/ DEPENDANCIES  i think dependancies are mapped to targets it will run the dependancy first if you do make tester2.txt  tester2.txt: tester.txt cat tester.txt &amp;gt; tester2.txt tester.txt: echo &amp;quot;this is a test&amp;quot; &amp;gt; tester.txt MACROS  Sort of like variables in other languages set a macro / assign a variable with &amp;lsquo;var = value&amp;rsquo; use a macro / use a var with $(var) VARIABLENAME = VALUE OF VARIABLE they expand using syntax $(VARIABLENAME)  TMP = tester1.</description>
+    </item>
+    
+    <item>
+      <title>Short notes on recutils </title>
+      <link>/2021/05/22/recutilsnotes/</link>
+      <pubDate>Sat, 22 May 2021 00:13:50 +0000</pubDate>
+      
+      <guid>/2021/05/22/recutilsnotes/</guid>
+      <description>References  structured-text-tools/README.md at master · dbohdan/structured-text-tools · GitHub  GNU Recutils - GNU Project - Free Software Foundation  GNU Recutils: Top  GNU Recutils: Joining Records GNU Recutils: A Little Example GNU Recutils: Foreign Keys GNU Recutils: Foreign Keys        Basic file structure %rec: Book #%key: Id #%type: Id int #%auto: Id #%unique: ISBN %mandatory: Title %type: Location enum loaned home unknown %doc: + A book in my personal collection.</description>
+    </item>
+    
+    <item>
+      <title>Notes on Kotlin for sololearn course</title>
+      <link>/2021/02/25/kotlin/</link>
+      <pubDate>Thu, 25 Feb 2021 00:13:50 +0000</pubDate>
+      
+      <guid>/2021/02/25/kotlin/</guid>
+      <description>Learning Kotlin through sololearn 2021-02-25 Thu 09:19 AM Printing like in java (println(&amp;quot;&amp;quot;))  println(&amp;ldquo;strings&amp;rdquo;+variable_casted_to_string) println(variable) println(variable+&amp;quot; &amp;ldquo;+variable1) println(&amp;ldquo;numbers in from top to bottom \n 1 \n 2 \n 3&amp;rdquo;)  \n \t for newline and tab
+Main function fun main(Args Array:&amp;lt;String&amp;gt;){ // body statements } 2021-02-26 Fri 11:10 you do not need to have args in the bracket of main, if you are not passing anything into it.
+2021-02-26 Fri 11:11 In order for the kotlin interpretor (kotlin) to run on a file it needs to have the .</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>New Ideas for learning Godot &middot; </title>
+        <meta name="description" content="Youtube gives me so much inspiration">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.88.1" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="New Ideas for learning Godot">
+<meta property="og:description" content="Youtube gives me so much inspiration">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/godot_ideas_0/">
+        <link rel="stylesheet" href="dist/site.css">
+        <link rel="stylesheet" href="dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="Reece&#39;s Blog" href="">Reece&#39;s Blog</a>
+                            </h1>
+                        
+                        <a class="button-square" href="index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/XXX" rel="me">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/XXX" rel="me">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" title="Email" href="mailto:XXX@email.com">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Getting Started with Hugo" href="/hugoisforlovers/">Getting Started with Hugo</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">New Ideas for learning Godot</h1>
+    
+        <p class="post-description" itemprop="description">Youtube gives me so much inspiration</p>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2020-05-21" itemprop="datePublished">Thu, May 21, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">Reece Petersen</a>
+            </span>
+        </span>
+    </p>
+    
+        <p class="post-reading post-line">
+            <span>Estimated reading time: 2 min</span>
+        </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <h2 id="obvious-ones">Obvious ones</h2>
+<h2 id="double-jump---learned-from-thebaldchick---godot-3-how-to-make-your-character-double-jump">Double Jump - Learned from &lsquo;TheBaldChick - Godot 3: How to make your character double jump&rsquo;</h2>
+<p>2020-05-22 This took forever. I&rsquo;ve been trying to add double jump to any game since I downloaded
+godot.</p>
+<p>I learned a lot just going through the basics and now I understand the underlying logic a bit more.</p>
+<p>Learning from multiple sources is a good and bad thing.</p>
+<p>If I try to follow just one way of doing it, it will be better for that one way but my knowledge is limited in breadth.</p>
+<p>If I learn how to implement something in a variety of ways, I actually gain the knowledge and experience to figure things out in varying contexts, but it takes longer.</p>
+<p>Like I learned about how it would be a performance gain to only check and only set if on floor and jump count when it is required not every time a player is on the floor.</p>
+<p>I learned about how gravity works in godot and how it is different from the cartesian plane in maths.</p>
+<ul>
+<li>the upper left is considered 0,0</li>
+<li>going down the y-axis increases the y value</li>
+</ul>
+<h2 id="wall-jump">Wall jump</h2>
+<p>2020-05-22 Now, I need to figure out how to get this working.</p>
+<p>In my head, I assume the logic is to reset the jump count when touching a wall. This relies on collision detection. There might be a method in move_and_slide for collision detection that is not floor or ceiling.</p>
+<p>Raycasts can be used for collision detection by making use of is_colliding(),
+2 raycasts for right and 2 for left.
+Both sides are to be encased in a node for ease of use, calling playerRaycastLeft/Right</p>
+<p>The logic would be</p>
+<pre tabindex="0"><code>    if  touch_wall() &amp;&amp; is_action_just_pressed(&quot;ui_up&quot;) then
+        jumpCount = 0
+        velocity.y = jumpforce
+</code></pre><h2 id="slide">Slide</h2>
+<p>2020-05-23 A wall slide is also requiring raycasts and the slowing down of gravity.
+General jump physics requires that the player has gravity applied at the same rate when falling.
+Slide will have the gravity lessened while raycasts touch the wall.</p>
+<p>In order to be accurate, there needs to be a way to determine if it is a high enough wall as slopes and
+small walls will cause the player to hug to the wall or wall jump instead of regular jump.</p>
+<h2 id="dash-and-air-dash">Dash and Air Dash</h2>
+<p>2020-05-23 A dash requires that y gravity be suspended for a timer of 0.5 and then reactivated.
+During this time of gravity suspension the player will have increased x-axis speed then promptly fall.</p>
+<ul>
+<li>Roll</li>
+<li>Air Roll</li>
+<li>Angle Kick</li>
+<li>Upper Cut</li>
+<li>Block</li>
+<li>Parry</li>
+</ul>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=New%20Ideas%20for%20learning%20Godot&url=%2fgodot_ideas_0%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2fgodot_ideas_0%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=%2fgodot_ideas_0%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="Reece&#39;s Blog" href="">Reece&#39;s Blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2020 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/jquery.fitvids.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
+

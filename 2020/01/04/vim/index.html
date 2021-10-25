@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Reece&#39;s Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="/img/home-bg-2.png">
+    <meta property="twitter:image" content="/img/home-bg-2.png" />
+    
+
+    
+    <meta name="title" content="Running Vim notes" />
+    <meta property="og:title" content="Running Vim notes" />
+    <meta property="twitter:title" content="Running Vim notes" />
+    
+
+    
+    <meta name="description" content="Eventually plan to separate this into multiple posts">
+    <meta property="og:description" content="Eventually plan to separate this into multiple posts" />
+    <meta property="twitter:description" content="Eventually plan to separate this into multiple posts" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Vim, Emacs, Linux, Unix, Flutter, PHP, Javascript, Android, HTML, CSS, Microservice">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Running Vim notes-Devlog | Reece&#39;s Blog</title>
+
+    <link rel="canonical" href="/2020/01/04/vim/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Reece&#39;s Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-2.png')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/tinkering" title="Tinkering">
+                            Tinkering
+                        </a>
+                        
+                        <a class="tag" href="/tags/linux" title="linux">
+                            linux
+                        </a>
+                        
+                        <a class="tag" href="/tags/vim" title="vim">
+                            vim
+                        </a>
+                        
+                    </div>
+                    <h1>Running Vim notes</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                Reece Petersen
+                             
+                            on 
+                            Saturday, January 4, 2020
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h1 id="vim-for-college">Vim for college</h1>
+<h2 id="pattern-matching-is-amazing-d-and-help-regular">pattern matching is amazing \d and :help regular</h2>
+<pre tabindex="0"><code>Character classes:					*/character-classes*
+      magic   nomagic	matches ~
+|/\i|	\i	\i	identifier character (see 'isident' option)
+|/\I|	\I	\I	like &quot;\i&quot;, but excluding digits
+|/\k|	\k	\k	keyword character (see 'iskeyword' option)
+|/\K|	\K	\K	like &quot;\k&quot;, but excluding digits
+|/\f|	\f	\f	file name character (see 'isfname' option)
+|/\F|	\F	\F	like &quot;\f&quot;, but excluding digits
+|/\p|	\p	\p	printable character (see 'isprint' option)
+|/\P|	\P	\P	like &quot;\p&quot;, but excluding digits
+|/\s|	\s	\s	whitespace character: &lt;Space&gt; and &lt;Tab&gt;
+|/\S|	\S	\S	non-whitespace character; opposite of \s
+|/\d|	\d	\d	digit:				[0-9]
+|/\D|	\D	\D	non-digit:			[^0-9]
+|/\x|	\x	\x	hex digit:			[0-9A-Fa-f]
+|/\X|	\X	\X	non-hex digit:			[^0-9A-Fa-f]
+|/\o|	\o	\o	octal digit:			[0-7]
+|/\O|	\O	\O	non-octal digit:		[^0-7]
+|/\w|	\w	\w	word character:			[0-9A-Za-z_]
+|/\W|	\W	\W	non-word character:		[^0-9A-Za-z_]
+|/\h|	\h	\h	head of word character:		[A-Za-z_]
+|/\H|	\H	\H	non-head of word character:	[^A-Za-z_]
+|/\a|	\a	\a	alphabetic character:		[A-Za-z]
+|/\A|	\A	\A	non-alphabetic character:	[^A-Za-z]
+|/\l|	\l	\l	lowercase character:		[a-z]
+|/\L|	\L	\L	non-lowercase character:	[^a-z]
+|/\u|	\u	\u	uppercase character:		[A-Z]
+|/\U|	\U	\U	non-uppercase character		[^A-Z]
+|/\_|	\_x	\_x	where x is any of the characters above: character
+			class with end-of-line included
+(end of character classes)
+
+      magic   nomagic	matches ~
+|/\e|	\e	\e	&lt;Esc&gt;
+|/\t|	\t	\t	&lt;Tab&gt;
+|/\r|	\r	\r	&lt;CR&gt;
+|/\b|	\b	\b	&lt;BS&gt;
+|/\n|	\n	\n	end-of-line
+|/~|	~	\~	last given substitute string
+|/\1|	\1	\1	same string as matched by first \(\)
+|/\2|	\2	\2	Like &quot;\1&quot;, but uses second \(\)
+
+</code></pre><ul>
+<li>so vim has the ability to do quick pattern matching with :s and with searching</li>
+<li>vim also can repeat the last : command with @:</li>
+</ul>
+<h2 id="general-vim">general vim</h2>
+<pre tabindex="0"><code>:set spell!
+:set spellang=en
+
+</code></pre><table>
+<thead>
+<tr>
+<th>keys</th>
+<th>def</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>]s</td>
+<td>go to next warning/error</td>
+</tr>
+<tr>
+<td>[s</td>
+<td>go to prev warning/error</td>
+</tr>
+<tr>
+<td>[S</td>
+<td>go to prev error</td>
+</tr>
+<tr>
+<td>]S</td>
+<td>go to next error</td>
+</tr>
+<tr>
+<td>z=</td>
+<td>prompt for correct spelling</td>
+</tr>
+<tr>
+<td>zg</td>
+<td>adding word to Vim dictionary (good word list)</td>
+</tr>
+<tr>
+<td>zug</td>
+<td>removing word from Vim dictionary (good word list)</td>
+</tr>
+<tr>
+<td>zw</td>
+<td>make this word be seen as a bad word (bad word list)</td>
+</tr>
+<tr>
+<td>zuw</td>
+<td>remove this word from the bad word list (bad word list)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tools-and-plugins">Tools and plugins</h2>
+<ul>
+<li>aspell</li>
+<li>languagetool</li>
+<li>dpelle/vim-Language Tool (searching for a better faster and asynchronous one)</li>
+</ul>
+<h2 id="settings">Settings</h2>
+<pre tabindex="0"><code>&quot;spell check 
+  autocmd FileType tex nnoremap &lt;space&gt;ss :term aspell -c -t &quot;%&quot;&lt;CR&gt;i
+  autocmd FileType markdown nnoremap &lt;space&gt;ss :term aspell -c -M &quot;%&quot;&lt;CR&gt;i
+  autocmd FileType tex,markdown nnoremap &lt;space&gt;S :term languagetool  &quot;%&quot;&lt;CR&gt;i
+  nnoremap &lt;space&gt;sl :LanguageToolCheck&lt;CR&gt;
+&quot;Word count
+  autocmd FileType tex map &lt;F3&gt; :w !detex \| wc -w&lt;CR&gt;
+  autocmd FileType tex inoremap &lt;F3&gt; &lt;Esc&gt;:w !detex \| wc -w&lt;CR&gt;
+&quot;vim spell check 
+goes to next word and corrects it in insert mode
+  inoremap &lt;C-s&gt; &lt;c-g&gt;u&lt;Esc&gt;]s1z=a
+  inoremap &lt;C-q&gt; &lt;c-g&gt;u&lt;Esc&gt;[s1z=a
+  inoremap &lt;M-x&gt; &lt;c-g&gt;u&lt;Esc&gt;]s1z=a
+  inoremap &lt;M-z&gt; &lt;c-g&gt;u&lt;Esc&gt;[s1z=a
+goes to next word and corrects it from normal mode
+  nnoremap &lt;C-s&gt; ]s1z=
+  nnoremap &lt;C-q&gt; [s1z=
+  nnoremap &lt;M-x&gt; ]s1z=
+  nnoremap &lt;M-z&gt; [s1z=
+</code></pre><h2 id="vim-spelling-and-spell-checking">vim spelling and spell checking</h2>
+<ul>
+<li><a href="https://www.maketecheasier.com/turn-vim-word-processor/">https://www.maketecheasier.com/turn-vim-word-processor/</a></li>
+<li>using a thesaurus and complete opts and <!-- raw HTML omitted -->t</li>
+<li>or Aspell -c % ( needs Aspell-en package from pacman  )</li>
+<li>or Hunspell -c % ( needs Hunspell-en-us package from pacman  )</li>
+<li><a href="https://www.youtube.com/watch?v=qZ4sPsZVozU">https://www.youtube.com/watch?v=qZ4sPsZVozU</a></li>
+</ul>
+<h2 id="spelling-in-insert-mode">spelling in insert mode</h2>
+<ul>
+<li>
+<p>spell checking - Auto-correct spelling mistakes - Vi and Vim Stack Exchange</p>
+</li>
+<li>
+<p><a href="https://vi.stackexchange.com/questions/68/autocorrect-spelling-mistakes">https://vi.stackexchange.com/questions/68/autocorrect-spelling-mistakes</a></p>
+</li>
+<li>
+<p>Go back to last misspelled word and pick first suggestion.</p>
+</li>
+<li>
+<p>inoremap <!-- raw HTML omitted --> <!-- raw HTML omitted -->u<!-- raw HTML omitted -->[s1z=`]a<!-- raw HTML omitted -->u</p>
+</li>
+</ul>
+<p>&quot; Select last misspelled word (typing will edit).</p>
+<ul>
+<li>nnoremap <!-- raw HTML omitted --> <!-- raw HTML omitted -->[sve<!-- raw HTML omitted --></li>
+<li>inoremap <!-- raw HTML omitted --> <!-- raw HTML omitted -->[sve<!-- raw HTML omitted --></li>
+<li>snoremap <!-- raw HTML omitted --> <!-- raw HTML omitted -->b[sviw<!-- raw HTML omitted --></li>
+</ul>
+<h1 id="vimscript">Vimscript</h1>
+<h2 id="vimscript-filters-with---20210802-0900">vimscript filters with !! %! 2021/08/02 09:00</h2>
+<ul>
+<li><a href="https://teddit.net/r/vim/comments/otnba9/how_do_i_build_custom_text_filterstransformations/">https://teddit.net/r/vim/comments/otnba9/how_do_i_build_custom_text_filterstransformations/</a></li>
+<li>so what you do is you pass the current buffer to a program, eg grep and it filters it out into the buffer</li>
+<li>great for listing things or transforming text and replacing</li>
+</ul>
+<h2 id="how-to-create-a-vim-mode">how to create a vim mode</h2>
+<pre tabindex="0"><code>I would like to have the user call my function and then have the function request user input but I do not want the user to have to type 'enter' after typing a letter as is required by the &quot;input()&quot; function. For instance, the user should be able to type single letter commands like 'h','j','k','l' and each letter typed would loop around my function until the user typed 'x' for exit. If I use &quot;input()&quot; then the user would have to type 'h&lt;enter&gt;','j&lt;enter&gt;'...
+
+Any suggestions on how I might be able to do this?
+
+If more clarification is needed please let me know.
+
+UPDATE
+
+Got it working:
+
+function! s:getchar()
+  let c = getchar()
+  if c =~ '^\d\+$'
+    let c = nr2char(c)
+  endif
+  return c
+endfunction
+
+&quot; Interactively change the window size
+function! InteractiveWindow()
+  let char = &quot;s&quot;
+  while char =~ '^\w$'
+    echo &quot;(InteractiveWindow) TYPE: h,j,k,l to resize or a for auto resize&quot;
+    let char = s:getchar()
+    if char == &quot;h&quot; | call SetWindowSize( &quot;incr&quot; ,-5 ,0 ) | endif
+    if char == &quot;j&quot; | call SetWindowSize( &quot;incr&quot;  ,0 ,5 ) | endif
+    if char == &quot;k&quot; | call SetWindowSize( &quot;incr&quot;  ,0 ,-5) | endif
+    if char == &quot;l&quot; | call SetWindowSize( &quot;incr&quot;  ,5 ,0 ) | endif
+    if char == &quot;a&quot; | call SetWindowSize( &quot;abs&quot;  ,0  ,0 ) | endif
+    redraw
+  endwhile
+endfunction
+</code></pre><h2 id="vim-normal-mode-from--tricks">vim normal mode from : tricks</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=SZ-xHGD7sMc&amp;list=PLcTu2VkAIIWzD2kicFNHN2c35XQCeZdsv&amp;index=9">Path to mastery vim conf 2020</a></li>
+</ul>
+<pre tabindex="0"><code>:norm
+&quot; this is go to normal mode then insert a double quote at the beginning
+
+:%norm I&quot;
+
+g/pattern/norm &lt;commands&gt;
+&quot;any line with a double space at the beginning&quot;
+g/^  /norm &lt;commands&gt;
+&quot;selecting everything in second set of  double quotes then lowercase them&quot;
+%norm v2in&quot;gu 
+  &quot;id&quot; &quot;name&quot;
+</code></pre><h2 id="tricks">tricks</h2>
+<ul>
+<li><code>:.</code> in command mode means current line</li>
+<li><code>:%</code> in command mode means current buffer</li>
+<li>so <code>:.normal df($x</code> means operate on current line</li>
+<li>so <code>:%normal df($x</code> means operate on current buffer</li>
+<li>so <code>:.,+10normal df($x</code> means operate from this line to +10 lines</li>
+</ul>
+<h2 id="basics">basics</h2>
+<ol>
+<li>Know What Vimscript is and Why to Use It
+<ol>
+<li>Harder to Grok Because .vimrc Compatible</li>
+<li>Modify an Existing Plugin</li>
+<li>Add Minor Modifications to Your .vimrc</li>
+</ol>
+</li>
+<li>Use echo/echom to Send Messages</li>
+<li>Use :messages to Former Error Messages</li>
+<li>Use set for Options</li>
+<li>Use let for Variables</li>
+<li>Use if/elseif/endif for Conditions</li>
+<li>Use fu[nction]/endf[unction] for Functions
+<ol>
+<li>Use :echom YourFun() to Test and See Return Values</li>
+<li>Must Start with Uppercase</li>
+</ol>
+</li>
+<li>Use command to Define Ex Commands
+<ol>
+<li>Example: com! Greet call Greet()</li>
+<li>Must Start with Uppercase</li>
+</ol>
+</li>
+<li>Know Where to Learn More Vimscript
+<ol>
+<li>
+<p><a href="https://learnvimscriptthehardway.stev">https://learnvimscriptthehardway.stev</a>&hellip;</p>
+</li>
+<li>
+<p>Mastering Vim, O’Reilly</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>More on <a href="https://github.com/rwxrob/boost">https://github.com/rwxrob/boost</a></p>
+<p>for i in bear hamburger lighbulb pomo; do echo &ldquo;ecmoji[$i]&quot;=; done
+for i in 1 2 3 4 5 6; do printf &ldquo;$i&rdquo;,; done;</p>
+<p>list1 = [&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;,&rsquo;d']
+for i in list1:print(i)</p>
+<p>for i in [&lsquo;1&rsquo;,&lsquo;2&rsquo;,&lsquo;3&rsquo;]:print(i+&rdquo;,&quot;,end=' &lsquo;)</p>
+<p>for i in newlist newlist oldlist wowlist danglist dulist; do  printf $i, ; done</p>
+<p>print(&ldquo;1&rdquo;) if 1==1 else print(&ldquo;2&rdquo;) if 2==2 else print(&ldquo;3&rdquo;) if 3==3 else print(&ldquo;4&rdquo;)</p>
+<h2 id="functions">Functions</h2>
+<ul>
+<li>you create a function</li>
+<li>you bind a command to calling that function</li>
+<li>now that function is callable from :</li>
+</ul>
+<pre tabindex="0"><code>function! Literate()
+  setlocal spell spelllang=en_us
+  setlocal formatoptions=t1 &quot;t = textwrap, 1 = break line before 1 letter words
+  setlocal textwidth=120
+  setlocal noautoindent
+endfunction
+
+com! lit call Literate()
+</code></pre><ul>
+<li>function!</li>
+<li>com! = user defined command</li>
+<li>lit = command name</li>
+<li>Literature = function name</li>
+</ul>
+<h2 id="vim-with-locatefindsearch-without-plugins-args-locate-filenametab--2021-07-18">vim with locate/find/search without plugins (:args <code>locate filename</code><!-- raw HTML omitted -->)  2021-07-18</h2>
+<ul>
+<li>:args <code>locate filename</code><!-- raw HTML omitted --></li>
+</ul>
+<h2 id="vim-with-pandoc">vim with pandoc</h2>
+<ul>
+<li><a href="https://vimaltech.com/pandoc-markdown-to-html/">vim with pandoc and pretty</a></li>
+</ul>
+<h2 id="vimwiki-insert-mode-tips-and-tricks">vimwiki insert mode tips and tricks</h2>
+<ul>
+<li><!-- raw HTML omitted --><!-- raw HTML omitted --> insert from dictionary (needs set dictionary=/usr/share/dict/cracklib-small)</li>
+<li>in normal mode <code>gi</code> takes you to the last place you inserted text</li>
+<li><!-- raw HTML omitted --> indents line</li>
+<li><!-- raw HTML omitted --> outdents line</li>
+<li><!-- raw HTML omitted --> deletes prev word</li>
+<li><!-- raw HTML omitted -->	reindent the line, (move cursor to auto indent position)</li>
+<li><!-- raw HTML omitted -->	Insert previously inserted text</li>
+<li><!-- raw HTML omitted -->	Insert the character below</li>
+<li><!-- raw HTML omitted -->	Delete one character backward</li>
+<li><!-- raw HTML omitted -->	Insert the character above</li>
+<li><!-- raw HTML omitted --> {register}	Insert the content of {register}
+<ul>
+<li>% = filename</li>
+<li>
+<h1 id="-other-file-name">= other file name</h1>
+</li>
+<li>/ = last search</li>
+<li>&quot; = whats in vims clipboard</li>
+</ul>
+</li>
+<li><!-- raw HTML omitted --> {normal mode command}	execute {normal mode command} without leaving insert mode</li>
+</ul>
+<h1 id="using-vim-for-development">using vim for development</h1>
+<ul>
+<li><a href="https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/">A Complete Guide to Neovim Configuration for Python Development - jdhao&rsquo;s blog</a></li>
+<li>neomake
+<ul>
+<li>install the proper tools for linting
+<ul>
+<li>jshint, eslint, black, pylint, htmlhint, tidy, mdl,</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>neoformat
+<ul>
+<li>install the proper tools for formatting
+<ul>
+<li>yapf, dartfmt, flake8, astyle, shfmt, stylelint, uncrustify, gdtoolkit, php-tidy</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://dev.to/iggredible/using-buffers-windows-and-tabs-efficiently-in-vim-56jc">https://dev.to/iggredible/using-buffers-windows-and-tabs-efficiently-in-vim-56jc</a></p>
+<h1 id="vim-vimwiki-slimming">vim vimwiki slimming</h1>
+<ul>
+<li>
+<p><input checked="" disabled="" type="checkbox"> i want vimwiki table mode</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> i want [[ and ]]  mappings</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> i want folding (look in ~/.config/nvim/ftplugin/vimwiki.vim)</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> i want to remap tab and enter</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> folding</p>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="https://jdhao.github.io/2019/08/16/nvim_config_folding/">https://jdhao.github.io/2019/08/16/nvim_config_folding/</a></li>
+<li><input disabled="" type="checkbox"> <a href="https://stackoverflow.com/questions/3828606/vim-markdown-folding">https://stackoverflow.com/questions/3828606/vim-markdown-folding</a></li>
+<li><input disabled="" type="checkbox"> <a href="https://stackoverflow.com/questions/27385161/vim-slows-down-when-using-fold-expr">https://stackoverflow.com/questions/27385161/vim-slows-down-when-using-fold-expr</a></li>
+<li><input disabled="" type="checkbox"> <a href="http://vimcasts.org/episodes/writing-a-custom-fold-expression/">http://vimcasts.org/episodes/writing-a-custom-fold-expression/</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="vim-auto-incrementing-list">vim auto incrementing list</h1>
+<ul>
+<li>select lines with s-v or c-v then g<!-- raw HTML omitted --></li>
+<li>to do it with letters to :set nrformats+=alpha</li>
+</ul>
+<h1 id="vim-dealing-with-macros-without-macros">Vim dealing with macros without macros</h1>
+<ul>
+<li>selecting a bunch of lines with ctrl-v then pressing :norm yss&quot; or :norm I&quot; and :norm A&quot;</li>
+<li>search for something and then cgn change it to what you want and then press . to repeat</li>
+</ul>
+<h1 id="vim-indenting">vim indenting</h1>
+<ul>
+<li>ctrl-t in insert mode to indent</li>
+<li>ctrl-d in insert mode to outdent</li>
+</ul>
+<h1 id="vim-wiki-list-items">vim-wiki list items</h1>
+<ul>
+<li>gll to indent item</li>
+<li>glh to outdent item</li>
+<li>gl- to create or switch element to list element</li>
+<li>gl8 to create or switch element to * element</li>
+<li><!-- raw HTML omitted --> indent in insert mode</li>
+<li><!-- raw HTML omitted --> outdent in insert mode</li>
+</ul>
+<h1 id="vim-how-to-search-and-replace-notes">vim how to search and replace notes</h1>
+<ul>
+<li>
+<p>[I = shows all lines with word under cursor</p>
+</li>
+<li>
+<p>if you do a * and then :%s//replacement/gc</p>
+</li>
+<li>
+<p>it will then replace the highlighted/searched word</p>
+</li>
+<li>
+<p>replacing things in visual selection by visually selecting and then :s/find/replace/gc</p>
+</li>
+<li>
+<p><!-- raw HTML omitted -->* for changing word under cursor and then press . to repeat</p>
+</li>
+<li>
+<p>search for something and then cgn change it to what you want and then press . to repeat</p>
+</li>
+</ul>
+<h1 id="vim-terminal-notes">vim terminal notes</h1>
+<p>to use the vim terminal and remap you can use tnoremap
+autocmd TermOpen * tnoremap <!-- raw HTML omitted --> <!-- raw HTML omitted --> &lt;C-&gt;<!-- raw HTML omitted -->
+<!-- raw HTML omitted --> is how you escape</p>
+<h1 id="vim-vim-wiki-table-commands">vim vim-wiki table commands</h1>
+<p><a href="https://www.youtube.com/watch?v=N2G8Quh9GdA">vim-wiki YouTube tutorial</a></p>
+<h2 id="insert-mode">Insert mode</h2>
+<table>
+<thead>
+<tr>
+<th>keys</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><!-- raw HTML omitted --></td>
+<td>Go down create cell</td>
+</tr>
+<tr>
+<td><!-- raw HTML omitted --></td>
+<td>Go to next cell</td>
+</tr>
+<tr>
+<td><!-- raw HTML omitted --></td>
+<td>Go to prev cell</td>
+</tr>
+</tbody>
+</table>
+<h2 id="normal-mode">Normal mode</h2>
+<table>
+<thead>
+<tr>
+<th>keys</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><!-- raw HTML omitted --></td>
+<td>move column to the left</td>
+</tr>
+<tr>
+<td><!-- raw HTML omitted --></td>
+<td>move column to the right</td>
+</tr>
+<tr>
+<td>gqq/gww</td>
+<td>reformat table</td>
+</tr>
+</tbody>
+</table>
+<h1 id="vim-vimwiki-text-objects">vim vimwiki text objects</h1>
+<table>
+<thead>
+<tr>
+<th>object</th>
+<th>descriptions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ah</td>
+<td>section between 2 headings including empty trailing lines</td>
+</tr>
+<tr>
+<td>ih</td>
+<td>section between 2 headings excluding empty trailing lines</td>
+</tr>
+<tr>
+<td>a\</td>
+<td>table cells</td>
+</tr>
+<tr>
+<td>i\</td>
+<td>inner table cells</td>
+</tr>
+<tr>
+<td>ac</td>
+<td>table columns</td>
+</tr>
+<tr>
+<td>ic</td>
+<td>inner table columns</td>
+</tr>
+</tbody>
+</table>
+<h1 id="vim-with-focus-writer-style">vim with focus-writer style</h1>
+<pre tabindex="0"><code>&quot;conner mcdaniel
+&quot;Using vim in place of WriteRoom
+
+&quot;Oct 12, 2011
+
+&quot;Fullscreen editors, also called distraction-free editors, have become popular lately. It’s appealing to have nothing but the words you’re editing before you. However, these editors are often lacking some of the most elemental of features and sometimes cost money. Fortunately, it’s pretty easy to make MacVim into an exact replica of WriteRoom (or gVim into DarkRoom on Windows). Put the following into your .vimrc:
+
+let g:writeroom = 0
+let g:transparency = &amp;transparency
+function! WriteRoom()
+   if has(&quot;gui_running&quot;)
+      if g:writeroom == 0
+         let g:writeroom = 1 set columns=80
+         set fullscreen set linebreak set nocursorline
+         set nolist set nonumber set noshowmode
+         set rulerformat=%{strftime('%b %e %I:%M %p')}
+         set transparency=0
+         hi NonText guifg=bg
+      else
+         let g:writeroom = 0
+         set cursorline set list set nofullscreen
+         set nolinebreak set number set rulerformat=
+         set showmode let &amp;transparency=g:transparency
+         hi clear
+      endif
+   endif
+endfunction
+
+&quot;This creates a function that you can execute to put MacVim into WriteRoom mode. If you don’t want the clock display then you can comment out the lines about rulerformat. Personally, I like to keep track of time when I’m in fullscreen mode. You can also change the lines and columns to best fit your screen size. Then, you can map a shortcut to execute the function. I use gw for normal mode and \w for insert mode.
+nmap gw :exe WriteRoom()&lt;cr&gt;
+imap &lt;leader&gt;w &lt;esc&gt;:exe WriteRoom()&lt;cr&gt;i
+</code></pre><h1 id="vim-outlining-drawers-tag-sidebars">vim outlining drawers tag sidebars</h1>
+<p>Vim-Voom is an amazing outlining tool
+opened with :Voom|toggle {filetype name}
+<a href="https://vim-voom.github.io/">https://vim-voom.github.io/</a>
+<a href="https://www.vim.org/scripts/script.php?script_id=2657">https://www.vim.org/scripts/script.php?script_id=2657</a>
+<a href="https://www.reddit.com/r/vim/comments/9999lo/voom_is_such_an_underrated_outliner_plugin/">https://www.reddit.com/r/vim/comments/9999lo/voom_is_such_an_underrated_outliner_plugin/</a></p>
+<h1 id="markdown-with-vim">Markdown with vim</h1>
+<p><a href="https://vi.stackexchange.com/questions/268/creating-tags-between-markdown-files-similar-to-h">https://vi.stackexchange.com/questions/268/creating-tags-between-markdown-files-similar-to-h</a></p>
+<p>Alt-T for toc toggle in vim latex</p>
+<p><a href="https://vim.works/2019/03/16/using-markdown-in-vim/">https://vim.works/2019/03/16/using-markdown-in-vim/</a>
+markdown-renumber
+markdown-drawer
+mkdx
+vim-markdown-folding</p>
+<h1 id="vim-quick-fix-list">vim quick-fix list</h1>
+<p><a href="https://vimhelp.org/quickfix.txt.html">https://vimhelp.org/quickfix.txt.html</a></p>
+<pre tabindex="0"><code>The quick-fix list is a list of entries containing position, file, and message. It often used for searches like :vimgrep and :grep as well as finding errors via :make.
+
+Here are a few quick-fix list commands to get you up and running fast:
+
+    Use :cnext and :cprev to move between your errors/matches.
+    :cfirst and :clast to go to the first and last error/matches respectively.
+    :copen to open up the quickfix list in a window (:cclose to close)
+    :cwindow to open quickfix list window only if there are errors
+    :cc to display the current error/match.
+    May want to use better mappings for :cnext and friends. I suggest Tim Pope's unimpaired plugin
+
+For more help see the following:
+
+:h quickfix
+:h :cnext
+:h :cfirst
+:h :cope
+:h :cwindow
+:h :cc
+
+cn cp cl cl 0,5
+cexpr
+</code></pre><h1 id="vim-fold-jumping">vim fold jumping</h1>
+<p><a href="https://stackoverflow.com/questions/9403098/is-it-possible-to-jump-to-the-next-closed-fold-in-vim">https://stackoverflow.com/questions/9403098/is-it-possible-to-jump-to-the-next-closed-fold-in-vim</a></p>
+<pre tabindex="0"><code>nnoremap &lt;silent&gt; J :call NextClosedFold('j')&lt;cr&gt;
+nnoremap &lt;silent&gt; K :call NextClosedFold('k')&lt;cr&gt;
+cexpr system('java ' . shellescape(expand('%:r')))
+cexpr system('topydo -c /home/reece/.topydo.conf') | cl
+
+function! NextClosedFold(dir)
+    let cmd = 'norm!z' . a:dir
+    let view = winsaveview()
+    let [l0, l, open] = [0, view.lnum, 1]
+    while l != l0 &amp;&amp; open
+        exe cmd
+        let [l0, l] = [l, line('.')]
+        let open = foldclosed(l) &lt; 0
+    endwhile
+    if open
+        call winrestview(view)
+    endif
+endfunction
+</code></pre><h1 id="general-coc">general coc</h1>
+<p><a href="https://github.com/neoclide/coc-lists">https://github.com/neoclide/coc-lists</a></p>
+<p>replaces maps history ripgrep</p>
+<h1 id="folds">Folds</h1>
+<pre tabindex="0"><code>zR		Open all folds.  This sets 'foldlevel' to highest fold level.
+zM		Close all folds: set 'foldlevel' to 0.
+</code></pre><h2 id="moving-over-folds">MOVING OVER FOLDS</h2>
+<table>
+<thead>
+<tr>
+<th>keys</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[z</td>
+<td>Move to the start of the current open fold.</td>
+</tr>
+<tr>
+<td>]z</td>
+<td>Move to the end of the current open fold..</td>
+</tr>
+<tr>
+<td>zj</td>
+<td>Move downwards to the start of the next fold..</td>
+</tr>
+<tr>
+<td>zk</td>
+<td>Move upwards to the end of the previous fold..</td>
+</tr>
+</tbody>
+</table>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2020/05/21/vim_00/" data-toggle="tooltip" data-placement="top" title="Vim notes">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+<div id="disqus-comment"></div>
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/android" title="android">
+                            android
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/bash" title="bash">
+                            bash
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/design" title="design">
+                            design
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/development" title="development">
+                            development
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/imagemagick" title="imagemagick">
+                            imagemagick
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/inkscape" title="inkscape">
+                            inkscape
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/linux" title="linux">
+                            linux
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/photography" title="photography">
+                            photography
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/tinkering" title="tinkering">
+                            tinkering
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/vim" title="vim">
+                            vim
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Reece&#39;s Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:reecepetersen98@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/rop98">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Reece&#39;s Blog 2021
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+</body>
+</html>

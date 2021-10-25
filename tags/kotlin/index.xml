@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kotlin on Reece&#39;s Blog</title>
+    <link>/tags/kotlin/</link>
+    <description>Recent content in Kotlin on Reece&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>My Name</copyright>
+    <lastBuildDate>Thu, 25 Feb 2021 00:13:50 +0000</lastBuildDate><atom:link href="/tags/kotlin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notes on Kotlin for sololearn course</title>
+      <link>/2021/02/25/kotlin/</link>
+      <pubDate>Thu, 25 Feb 2021 00:13:50 +0000</pubDate>
+      
+      <guid>/2021/02/25/kotlin/</guid>
+      <description>Learning Kotlin through sololearn 2021-02-25 Thu 09:19 AM Printing like in java (println(&amp;quot;&amp;quot;))  println(&amp;ldquo;strings&amp;rdquo;+variable_casted_to_string) println(variable) println(variable+&amp;quot; &amp;ldquo;+variable1) println(&amp;ldquo;numbers in from top to bottom \n 1 \n 2 \n 3&amp;rdquo;)  \n \t for newline and tab
+Main function fun main(Args Array:&amp;lt;String&amp;gt;){ // body statements } 2021-02-26 Fri 11:10 you do not need to have args in the bracket of main, if you are not passing anything into it.
+2021-02-26 Fri 11:11 In order for the kotlin interpretor (kotlin) to run on a file it needs to have the .</description>
+    </item>
+    
+  </channel>
+</rss>

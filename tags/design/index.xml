@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Design on Reece&#39;s Blog</title>
+    <link>/tags/design/</link>
+    <description>Recent content in Design on Reece&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>My Name</copyright>
+    <lastBuildDate>Fri, 22 May 2020 00:13:50 +0000</lastBuildDate><atom:link href="/tags/design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notes on progress with Inkscape</title>
+      <link>/2020/05/22/inkscape_ideas_0/</link>
+      <pubDate>Fri, 22 May 2020 00:13:50 +0000</pubDate>
+      
+      <guid>/2020/05/22/inkscape_ideas_0/</guid>
+      <description>Struggles with Inkscape The one thing I did not enjoy about working with Inkscape is probably not their fault.
+An issue with how it is distributed among linux distributions.
+As I was just testing it out, I thought an AppImage would be best.
+I discovered it was lacking extension support, luckily the community also had this problem.
+Thought reverting to an earlier version would help, it did not.
+Finally, I bit the bullet and decided to install the native package on arch.</description>
+    </item>
+    
+  </channel>
+</rss>
