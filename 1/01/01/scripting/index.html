@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Reece&#39;s Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="/img/home-bg-2.png">
+    <meta property="twitter:image" content="/img/home-bg-2.png" />
+    
+
+    
+    <meta name="title" content="Scripting tricks and tips" />
+    <meta property="og:title" content="Scripting tricks and tips" />
+    <meta property="twitter:title" content="Scripting tricks and tips" />
+    
+
+    
+    <meta name="description" content="How to do common things in shell and python and other scripting languages">
+    <meta property="og:description" content="How to do common things in shell and python and other scripting languages" />
+    <meta property="twitter:description" content="How to do common things in shell and python and other scripting languages" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Vim, Emacs, Linux, Unix, Flutter, PHP, Javascript, Android, HTML, CSS, Microservice">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Scripting tricks and tips-Devlog | Reece&#39;s Blog</title>
+
+    <link rel="canonical" href="/1/01/01/scripting/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Reece&#39;s Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-2.png')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/programming" title="programming">
+                            programming
+                        </a>
+                        
+                        <a class="tag" href="/tags/linux" title="linux">
+                            linux
+                        </a>
+                        
+                    </div>
+                    <h1>Scripting tricks and tips</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                Reece Petersen
+                             
+                            on 
+                            Monday, January 1, 0001
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="references">References</h2>
+<h2 id="bash-tips">Bash tips</h2>
+<p>for ternary if else
+{ command } is how you group it</p>
+<p><code>{ command &amp;&amp; command ;  } || command</code></p>
+<p>$0 is the name of the script
+so with that, you can cat the script and then have a help</p>
+<p>simple script</p>
+<p>case &ldquo;$1&rdquo; in</p>
+<ol>
+<li>;;</li>
+<li>;;
+*) ;;
+ecase</li>
+</ol>
+<p>simple controlling script</p>
+<p>while read -r -n1 key
+do
+if [[ $key == $'\e' ]];
+then
+break;
+elif [[ $key == p ]]; then
+mpvc -S ~/.umpvaudio_socket -p -q
+elif [[ $key == 0 ]]; then
+mpvc -S ~/.umpvaudio_socket -v 5
+elif [[ $key == 9 ]]; then
+mpvc -S ~/.umpvaudio_socket -V 50
+elif [[ $key == 1 ]]; then
+fi
+done</p>
+<h2 id="bash-variables">Bash variables</h2>
+<p>$1 is the first command-line argument passed to the shell script. Also, know as Positional parameters. For example, $0, $1, $3, $4 and so on. If you run ./script.sh filename1 dir1, then:</p>
+<p>$0 is the name of the script itself (script.sh)
+$1 is the first argument (filename1)
+$2 is the second argument (dir1)
+$9 is the ninth argument
+${10} is the tenth argument and must be enclosed in brackets after $9.
+${11} is the eleventh argument.</p>
+<h2 id="bash-parameter-expansion">Bash parameter expansion</h2>
+<p>so when manipulating a variable we use curly braces
+basic pattern matching</p>
+<pre tabindex="0"><code>name=reece
+echo &quot;$name&quot;       # param value
+echo &quot;${#name}&quot;    # param length
+echo &quot;${name:0:4}&quot; # getting the substring ${paramter:offset:length}
+echo &quot;${name^}&quot;    # title case
+echo &quot;${name^^}&quot;   # upper case
+echo &quot;${name,}&quot;    # first char is lower case
+echo &quot;${name,,}&quot;   # lower case
+unset name # returns variable to null
+echo &quot;${name:-Reece}&quot; # setting the default
+echo &quot;${name:-$USER}&quot;
+
+
+# output
+#reece
+#5
+#reec
+#Reece
+#REECE
+#reece
+#reece
+
+</code></pre><p>Substitution, poor man&rsquo;s sed in bash</p>
+<pre tabindex="0"><code>freedom='GNU Not UNIX ; GNU plus Linux'
+
+# Replace first occurrence of pattern with string
+echo &quot;${freedom/GNU/Gahnoo}&quot;
+
+# Replace all occurrences of pattern with string
+echo &quot;${freedom//GNU/Gahnoo}&quot;
+
+# Remove first match of pattern
+# match every character then a space and then a semicolon and replace it with nothing
+echo &quot;${freedom/* ; /}&quot;
+
+freedom='GNU Not UNIX ; GNU plus Linux ; Gahnoo slash linaks ; GNU/Linux'
+
+echo &quot;$freedom&quot;
+
+# remove all occurrences of pattern
+# will delete all lines
+echo &quot;${freedom//* ; /}&quot;
+
+# deletes last character because nothing is being replaced
+# % means start at end, ? means match first character
+echo &quot;${freedom%?}&quot;
+</code></pre><h2 id="commandline-tips">commandline tips</h2>
+<ul>
+<li>cd -
+<ul>
+<li>how to get back to last directory (also see popd and pushd)</li>
+</ul>
+</li>
+<li>ctrl-r for history (use fzf and also grep fzf_history/bash_history)</li>
+<li>readline tips
+<ul>
+<li>ctrl-u for killing whole line</li>
+<li>ctrl-k for killing to end of line</li>
+<li>ctrl-a for getting to beginning of line</li>
+<li>ctrl-w for killing word</li>
+<li>alt-backspace for killing word backwords</li>
+<li>ctrl-h is the same keycode as backspace</li>
+<li>alt-f is forward word</li>
+<li>alt-b is backward word</li>
+<li>sudo !! sudo on last command</li>
+<li>!$ for contents of last command , so !$ | xclip</li>
+<li>alias, vim <code>where scriptname</code></li>
+<li>&ndash;h for help most of the time</li>
+<li><code>--noconfirm</code> or <code>yes | command</code> for automated install</li>
+<li>creating aliases for pwd|pdw|wdp or cd.. or pamcan</li>
+<li><code>shutdown -c </code>; for scheduling shutdown for next minute and to kill it do <code>pkill shutdown</code></li>
+<li>making output prettier e.g side by side and up and down by echoing into column <code>echo </code>ls<code> | column</code></li>
+<li>hide history by prepending a space to a command in bash</li>
+</ul>
+</li>
+</ul>
+<h2 id="scripting">Scripting</h2>
+<ul>
+<li>
+<p><code> -- ensures that everything after is considered to be a filename # useful for cp and mv</code></p>
+</li>
+<li>
+<p><code>./*.mp3 ensures that all files return with a leading directory</code></p>
+</li>
+<li>
+<p>loops and recursion and globbing</p>
+</li>
+<li>
+<p>proper error checking <code>for file in ./*.mp3; do [ -e &quot;$file&quot; ] || continue; mediainfo &quot;$file&quot; ; done</code></p>
+</li>
+<li>
+<p>loops</p>
+<ul>
+<li><code>for f in *.mp3; do mediainfo ${f} ; done # match in pwd</code></li>
+<li><code>for f in ./**/*.mp3; do mediinfo ${f} ; done # recursive globbing </code></li>
+<li><code>find . -type f --name '*.mp3' -exec mediainfo {} \; # recursive match </code></li>
+<li><code>find . -type f --name '*.mp3' -exec mediainfo {} + # recursive match</code></li>
+</ul>
+</li>
+<li>
+<p>How to use the last command without its parameters <code>!:0</code></p>
+</li>
+<li>
+<p>how piping works with numbers</p>
+<ul>
+<li>0&gt; = stdin</li>
+<li>1&gt; = stdout</li>
+<li>2&gt; = stderror</li>
+</ul>
+<pre tabindex="0"><code>1&gt; toanotherprogram
+2&gt; /dev/null
+0&gt; 
+</code></pre></li>
+<li>
+<p>good reference for shell programs</p>
+<ul>
+<li><a href="https://www.reddit.com/r/bash/comments/ou63id/finished_my_first_real_project_its_an_editor_to/">stackexchange bash program</a></li>
+</ul>
+</li>
+<li>
+<p>bash case statements shortening</p>
+</li>
+</ul>
+<pre tabindex="0"><code>
+`)     easy_edit_form+=$input_selection
+         ;;
+ 1b)     easy_edit_form+=$input_selection
+         ;;
+ 1c)     easy_edit_form+=$input_selection
+         ;;
+ 1d)     easy_edit_form+=$input_selection
+         ;;
+ 1e)     easy_edit_form+=$input_selection
+         ;;
+ 1f)     easy_edit_form+=$input_selection
+         ;;
+ 1g)     easy_edit_form+=$input_selection
+         ;;
+ 1h)     easy_edit_form+=$input_selection
+         ;;
+ 1i)     easy_edit_form+=$input_selection
+         ;;
+ 1j)     easy_edit_form+=$input_selection
+         ;;
+ 1k)     easy_edit_form+=$input_selection
+         ;;
+ 1l)     easy_edit_form+=$input_selection
+         ;;
+ 1m)     easy_edit_form+=$input_selection
+         ;;
+ 1n)     easy_edit_form+=$input_selection
+         ;;
+ 1o)     easy_edit_form+=$input_selection
+         ;;
+ 1p)     easy_edit_form+=$input_selection
+         ;;
+ 1q)     easy_edit_form+=$input_selection
+         ;;
+ 1r)     easy_edit_form+=$input_selection
+         ;;
+ 1s)     easy_edit_form+=$input_selection
+         ;;
+
+   does the same as
+
+ 1[a-s])
+     easy_edit_form+=$input_selection
+     ;;
+</code></pre><h2 id="summary">Summary</h2>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/1/01/01/zenity/" data-toggle="tooltip" data-placement="top" title="Zenity Cheetsheet">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/1/01/01/writingdocumentation/" data-toggle="tooltip" data-placement="top" title="">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+<div id="disqus-comment"></div>
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/android" title="android">
+                            android
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/bash" title="bash">
+                            bash
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/design" title="design">
+                            design
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/development" title="development">
+                            development
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/imagemagick" title="imagemagick">
+                            imagemagick
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/inkscape" title="inkscape">
+                            inkscape
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/kotlin" title="kotlin">
+                            kotlin
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/linux" title="linux">
+                            linux
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/photography" title="photography">
+                            photography
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/programming" title="programming">
+                            programming
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/tinkering" title="tinkering">
+                            tinkering
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/vim" title="vim">
+                            vim
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Reece&#39;s Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:reecepetersen98@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/rop98">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Reece&#39;s Blog 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+</body>
+</html>

@@ -14,7 +14,7 @@
       <pubDate>Sat, 22 May 2021 00:13:50 +0000</pubDate>
       
       <guid>/2021/05/22/make/</guid>
-      <description>Make files for automation for projects (installing deleting options) General Layout  OUTPUT: OPTIONAL DEPENDENCIES COMMAND TO PRODUCE OUTPUT tester.text: echo &amp;quot;this is a test&amp;quot; &amp;gt; tester.txt install: cp file ~/bin/ uninstall: rm file ~/bin/ DEPENDANCIES  i think dependancies are mapped to targets it will run the dependancy first if you do make tester2.txt  tester2.txt: tester.txt cat tester.txt &amp;gt; tester2.txt tester.txt: echo &amp;quot;this is a test&amp;quot; &amp;gt; tester.txt MACROS  Sort of like variables in other languages set a macro / assign a variable with &amp;lsquo;var = value&amp;rsquo; use a macro / use a var with $(var) VARIABLENAME = VALUE OF VARIABLE they expand using syntax $(VARIABLENAME)  TMP = tester1.</description>
+      <description>Make files for automation for projects (installing deleting options) General Layout  OUTPUT: OPTIONAL DEPENDENCIES COMMAND TO PRODUCE OUTPUT tester.text: echo &amp;#34;this is a test&amp;#34; &amp;gt; tester.txt install: cp file ~/bin/ uninstall: rm file ~/bin/ DEPENDANCIES  i think dependancies are mapped to targets it will run the dependancy first if you do make tester2.txt  tester2.txt: tester.txt cat tester.txt &amp;gt; tester2.txt tester.txt: echo &amp;#34;this is a test&amp;#34; &amp;gt; tester.txt MACROS  Sort of like variables in other languages set a macro / assign a variable with &amp;lsquo;var = value&amp;rsquo; use a macro / use a var with $(var) VARIABLENAME = VALUE OF VARIABLE they expand using syntax $(VARIABLENAME)  TMP = tester1.</description>
     </item>
     
     <item>

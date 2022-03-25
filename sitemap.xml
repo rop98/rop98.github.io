@@ -2,19 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/tags/flask/</loc>
+    <lastmod>2022-03-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/flutter/</loc>
+    <lastmod>2022-03-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/2022/03/12/project-maikutlo/</loc>
+    <lastmod>2022-03-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/2022/03/12/project-maxintensity/</loc>
+    <lastmod>2022-03-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/php/</loc>
+    <lastmod>2022-03-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/2022/03/12/project-phpecommerce/</loc>
+    <lastmod>2022-03-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/</loc>
+    <lastmod>2022-03-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/projects/</loc>
+    <lastmod>2022-03-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/python/</loc>
+    <lastmod>2022-03-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2022-03-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2022-03-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/bibliography/</loc>
+    <lastmod>2022-02-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/referencing/</loc>
+    <lastmod>2022-02-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/2022/02/23/referencingbibliographyzotero/</loc>
+    <lastmod>2022-02-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/research/</loc>
+    <lastmod>2022-02-23T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/tags/linux/</loc>
     <lastmod>2021-10-25T00:13:50+00:00</lastmod>
   </url><url>
-    <loc>/post/</loc>
-    <lastmod>2021-10-25T00:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2021-10-25T00:13:50+00:00</lastmod>
-  </url><url>
     <loc>/2021/10/25/vim/</loc>
-    <lastmod>2021-10-25T00:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2021-10-25T00:13:50+00:00</lastmod>
   </url><url>
     <loc>/tags/tinkering/</loc>
@@ -92,6 +128,14 @@
     <loc>/page/</loc>
     <lastmod>2015-04-03T02:13:50+00:00</lastmod>
   </url><url>
+    <loc>/1/01/01/phponlinux/</loc>
+  </url><url>
+    <loc>/1/01/01/plantuml/</loc>
+  </url><url>
+    <loc>/1/01/01/umltools/</loc>
+  </url><url>
+    <loc>/1/01/01/writingdocumentation/</loc>
+  </url><url>
     <loc>/search/placeholder/</loc>
   </url><url>
     <loc>/top/about/</loc>
@@ -100,8 +144,16 @@
   </url><url>
     <loc>/top/archive/</loc>
   </url><url>
+    <loc>/tags/programming/</loc>
+  </url><url>
+    <loc>/top/project/</loc>
+  </url><url>
+    <loc>/1/01/01/shell/</loc>
+  </url><url>
     <loc>/search/</loc>
   </url><url>
     <loc>/top/</loc>
+  </url><url>
+    <loc>/1/01/01/zenity/</loc>
   </url>
 </urlset>

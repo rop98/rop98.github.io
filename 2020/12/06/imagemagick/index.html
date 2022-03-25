@@ -36,7 +36,7 @@
 
     <title>ImageMagick cheatsheet-Devlog | Reece&#39;s Blog</title>
 
-    <link rel="canonical" href="/2020/12/06/imagemagick/">
+    <link rel="canonical" href="/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 
@@ -101,6 +101,8 @@
                     
 		    
                         <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/project/">PROJECTS</a></li>
                     
 
                     
@@ -253,12 +255,12 @@ convert source.jpg -resize 75% destination.jpg
 <p><code>convert input.pdf[0] output.png</code></p>
 <h2 id="text-to-image-httpslegacyimagemagickorgusagetext">Text to image <a href="https://legacy.imagemagick.org/Usage/text/">https://legacy.imagemagick.org/Usage/text/</a></h2>
 <pre tabindex="0"><code>convert -background lightblue -fill blue -font Candice -size 320x140 \
-          caption:'This text is resized to best fill the space given.' \
+          caption:&#39;This text is resized to best fill the space given.&#39; \
           caption_filled.gif
           
-convert -background white -fill black -font arial -size 100x100 -gravity center caption:'O' O.png
+convert -background white -fill black -font arial -size 100x100 -gravity center caption:&#39;O&#39; O.png
 
-convert -background white -fill black -font arial -size 100x100 -gravity center caption:'X' X.png
+convert -background white -fill black -font arial -size 100x100 -gravity center caption:&#39;X&#39; X.png
 </code></pre><h1 id="color-to-image-httpslegacyimagemagickorgusagecanvas">Color to image <a href="https://legacy.imagemagick.org/Usage/canvas/">https://legacy.imagemagick.org/Usage/canvas/</a></h1>
 <pre tabindex="0"><code>convert -size 100x100 xc:white test.png
 
@@ -285,7 +287,7 @@ convert -size 100x100 canvas:red test.png
     convert -size 10x120  gradient:khaki-tomato       gradient_sunset.jpg
     convert -size 10x120  gradient:darkcyan-snow      gradient_snow_scape.jpg
 </code></pre><h1 id="patterns">Patterns</h1>
-<p>convert -size 60x60 pattern:checkerboard -auto-level<br>
+<p>convert -size 60x60 pattern:checkerboard -auto-level <br>
 +level-colors red,blue     pattern_color_checks.gif</p>
 <p>convert -size 60x60 pattern:hexagons out.png</p>
 <h1 id="command-to-create-thumbnail">Command to create thumbnail:</h1>
@@ -312,13 +314,13 @@ convert -size 100x100 canvas:red test.png
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2020/06/04/udemyphotography/" data-toggle="tooltip" data-placement="top" title="Notes on udemy photography course ">&larr;
+                        <a href="" data-toggle="tooltip" data-placement="top" title="Notes on udemy photography course ">&larr;
                             Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2021/02/25/kotlin/" data-toggle="tooltip" data-placement="top" title="Notes on Kotlin for sololearn course">Next
+                        <a href="" data-toggle="tooltip" data-placement="top" title="Notes on Kotlin for sololearn course">Next
                             Post &rarr;</a>
                     </li>
                     
@@ -373,6 +375,12 @@ convert -size 100x100 canvas:red test.png
                         
                         
                         
+                        <a href="/tags/bibliography" title="bibliography">
+                            bibliography
+                        </a>
+                        
+                        
+                        
                         <a href="/tags/design" title="design">
                             design
                         </a>
@@ -381,6 +389,18 @@ convert -size 100x100 canvas:red test.png
                         
                         <a href="/tags/development" title="development">
                             development
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/flask" title="flask">
+                            flask
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/flutter" title="flutter">
+                            flutter
                         </a>
                         
                         
@@ -411,6 +431,42 @@ convert -size 100x100 canvas:red test.png
                         
                         <a href="/tags/photography" title="photography">
                             photography
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/php" title="php">
+                            php
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/programming" title="programming">
+                            programming
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/projects" title="projects">
+                            projects
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/python" title="python">
+                            python
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/referencing" title="referencing">
+                            referencing
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/research" title="research">
+                            research
                         </a>
                         
                         
@@ -497,7 +553,7 @@ convert -size 100x100 canvas:red test.png
             
                 </ul>
 		<p class="copyright text-muted">
-                    Copyright &copy; Reece&#39;s Blog 2021
+                    Copyright &copy; Reece&#39;s Blog 2022
                     <br>
                     <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
                     <iframe

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>projects on Reece&#39;s Blog</title>
+    <link>/tags/projects/</link>
+    <description>Recent content in projects on Reece&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>My Name</copyright>
+    <lastBuildDate>Sat, 12 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maikutlo TV series Tracking web site</title>
+      <link>/2022/03/12/project-maikutlo/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/03/12/project-maikutlo/</guid>
+      <description>User manual &amp;ndash; Maikutlo  Introduction This user manual contains all the essential information that a user needs to fully utilise this information system. It includes descriptions of all functions, alternate use modes, procedures and processes to be followed in order to use and access all system functionalities. Step by step visual aids are also utilised for clarity.
+Getting started Maikutlo is a web-based series tracker. All you need is a device with a web browser that has a stable internet connection.</description>
+    </item>
+    
+    <item>
+      <title>Maximium Intensity Flutter workout app</title>
+      <link>/2022/03/12/project-maxintensity/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/03/12/project-maxintensity/</guid>
+      <description>Project lead for a fitness mobile application for both trainers and clients
+Description: A cross-platform mobile application using Flutter and Dart.
+Tooling: Vim, Flutter, Dart, Firestore, Provider, Trello, Teams, Figma, Inkscape, LucidCharts, Draw.io, PlantUML, Markdown, Shell
+Methodology: Agile
+Design Pattern: Provider, MVC
+Version control and Deployment: Git and Github
+Vim was used as my primary IDE with the dart lsp.
+Learned a bit of dart, learned about widgets and the biggest obstacle was state management.</description>
+    </item>
+    
+    <item>
+      <title>PHP Stock Photography Ecommerce site</title>
+      <link>/2022/03/12/project-phpecommerce/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/03/12/project-phpecommerce/</guid>
+      <description>Created a php stock photography site with paypal integration
+Description: A Web site with the ability for client to add, rearrange and sell photos. As well as displaying thumbnails on the site to prevent theft.
+Tooling: Vim, PHP, HTML, CSS, Javascript, MYSQL, ImageMagick, Bootstrap, PayPal, Trello, Figma, PlantUML, Markdown, Shell
+Methodology: Agile
+Design Pattern: Procedural PHP with templating
+Version control and Deployment: Git, XAMPP, phpMyAdmin
+ </description>
+    </item>
+    
+  </channel>
+</rss>

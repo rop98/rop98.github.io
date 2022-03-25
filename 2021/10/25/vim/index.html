@@ -36,7 +36,7 @@
 
     <title>Running Vim notes-Devlog | Reece&#39;s Blog</title>
 
-    <link rel="canonical" href="/2021/10/25/vim/">
+    <link rel="canonical" href="/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 
@@ -101,6 +101,8 @@
                     
 		    
                         <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/project/">PROJECTS</a></li>
                     
 
                     
@@ -205,18 +207,84 @@
                 post-container">
 
                 
-                <h1 id="vim-for-college">Vim for college</h1>
-<h2 id="pattern-matching-is-amazing-d-and-help-regular">pattern matching is amazing \d and :help regular</h2>
+                <h2 id="vim-plugins-i-dont-need-rn-2022-02-05">vim plugins i don&rsquo;t need rn 2022-02-05</h2>
+<ul>
+<li>far</li>
+<li>ultisnips</li>
+<li>snippets</li>
+<li>sneak</li>
+<li>css-color</li>
+<li>dart-vim-plugin</li>
+<li>fold-search</li>
+<li>todo.txt</li>
+<li>tex-fold</li>
+<li>wal.vim</li>
+<li>colorschemes</li>
+</ul>
+<h1 id="vim-tips-20220201-1138">vim tips 2022/02/01 11:38</h1>
+<dl>
+<dt>gi</dt>
+<dd>go back to where you just inserted text,</dd>
+<dt>g;</dt>
+<dd>actually go back to where you just inserted text, if you misclicked</dd>
+<dt>g,</dt>
+<dd>go forward in the insert mode change list</dd>
+</dl>
+<h1 id="vim-for-college">Vim for college</h1>
+<h2 id="relative-numbering-and-jumping-with-softwrap">relative numbering and jumping with softwrap</h2>
+<p><a href="https://stackoverflow.com/questions/20975928/moving-the-cursor-through-long-soft-wrapped-lines-in-vim">https://stackoverflow.com/questions/20975928/moving-the-cursor-through-long-soft-wrapped-lines-in-vim</a></p>
+<p>The problem with the often used</p>
+<pre tabindex="0"><code>noremap j gj  
+noremap k gk 
+</code></pre><p>option is, that it breaks the <!-- raw HTML omitted --> functionality, if you have lines in your text, which span across multiple lines.
+Example: you want 10k (go UP 10 lines), because you use relative numbers in the sidebar, but theres a multiline with 4 lines height. Therefore you end up effectively at 6 lines (6k) above your desired line, which you read from your relative numbers. You&rsquo;d have to calculate manually! Annoying&hellip; Especially if you have multiple multiline between your current position and your desired position - not Vim-istic!</p>
+<p>I like my <!-- raw HTML omitted --> function together with my :relativenumber, which is why I wrote the following functions &amp; mapping to solve all problems related to this.
+These functions let you use commands like 10j or 10k as expected, despite the presence of multilines with all the advantages of using gj and gk as your default movement mappings:</p>
+<p>Edit: I just found the following on reddit, which is so much better then my own solution. This is shortest possible version:</p>
+<pre tabindex="0"><code>nnoremap &lt;expr&gt; j v:count ? &#39;j&#39; : &#39;gj&#39;
+nnoremap &lt;expr&gt; k v:count ? &#39;k&#39; : &#39;gk&#39;
+(If you use noremap instead of nnoremap, then this works in both visual and normal modes)
+
+&#34;Longer&#34; version for better understanding and completeness:
+
+nnoremap &lt;expr&gt; k (v:count == 0 ? &#39;gk&#39; : &#39;k&#39;)
+nnoremap &lt;expr&gt; j (v:count == 0 ? &#39;gj&#39; : &#39;j&#39;)
+source: http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
+
+My old solution:
+
+nnoremap &lt;silent&gt; j :&lt;C-U&gt;call Down(v:count)&lt;CR&gt;
+vnoremap &lt;silent&gt; j gj
+
+nnoremap &lt;silent&gt; k :&lt;C-U&gt;call Up(v:count)&lt;CR&gt;
+vnoremap &lt;silent&gt; k gk
+
+function! Down(vcount)
+  if a:vcount == 0
+    exe &#34;normal! gj&#34;
+  else
+    exe &#34;normal! &#34;. a:vcount .&#34;j&#34;
+  endif
+endfunction
+
+function! Up(vcount)
+  if a:vcount == 0
+    exe &#34;normal! gk&#34;
+  else
+    exe &#34;normal! &#34;. a:vcount .&#34;k&#34;
+  endif
+endfunction
+</code></pre><h2 id="pattern-matching-is-amazing-d-and-help-regular">pattern matching is amazing \d and :help regular</h2>
 <pre tabindex="0"><code>Character classes:					*/character-classes*
       magic   nomagic	matches ~
-|/\i|	\i	\i	identifier character (see 'isident' option)
-|/\I|	\I	\I	like &quot;\i&quot;, but excluding digits
-|/\k|	\k	\k	keyword character (see 'iskeyword' option)
-|/\K|	\K	\K	like &quot;\k&quot;, but excluding digits
-|/\f|	\f	\f	file name character (see 'isfname' option)
-|/\F|	\F	\F	like &quot;\f&quot;, but excluding digits
-|/\p|	\p	\p	printable character (see 'isprint' option)
-|/\P|	\P	\P	like &quot;\p&quot;, but excluding digits
+|/\i|	\i	\i	identifier character (see &#39;isident&#39; option)
+|/\I|	\I	\I	like &#34;\i&#34;, but excluding digits
+|/\k|	\k	\k	keyword character (see &#39;iskeyword&#39; option)
+|/\K|	\K	\K	like &#34;\k&#34;, but excluding digits
+|/\f|	\f	\f	file name character (see &#39;isfname&#39; option)
+|/\F|	\F	\F	like &#34;\f&#34;, but excluding digits
+|/\p|	\p	\p	printable character (see &#39;isprint&#39; option)
+|/\P|	\P	\P	like &#34;\p&#34;, but excluding digits
 |/\s|	\s	\s	whitespace character: &lt;Space&gt; and &lt;Tab&gt;
 |/\S|	\S	\S	non-whitespace character; opposite of \s
 |/\d|	\d	\d	digit:				[0-9]
@@ -247,8 +315,7 @@
 |/\n|	\n	\n	end-of-line
 |/~|	~	\~	last given substitute string
 |/\1|	\1	\1	same string as matched by first \(\)
-|/\2|	\2	\2	Like &quot;\1&quot;, but uses second \(\)
-
+|/\2|	\2	\2	Like &#34;\1&#34;, but uses second \(\)
 </code></pre><ul>
 <li>so vim has the ability to do quick pattern matching with :s and with searching</li>
 <li>vim also can repeat the last : command with @:</li>
@@ -256,7 +323,6 @@
 <h2 id="general-vim">general vim</h2>
 <pre tabindex="0"><code>:set spell!
 :set spellang=en
-
 </code></pre><table>
 <thead>
 <tr>
@@ -310,15 +376,15 @@
 <li>dpelle/vim-Language Tool (searching for a better faster and asynchronous one)</li>
 </ul>
 <h2 id="settings">Settings</h2>
-<pre tabindex="0"><code>&quot;spell check 
-  autocmd FileType tex nnoremap &lt;space&gt;ss :term aspell -c -t &quot;%&quot;&lt;CR&gt;i
-  autocmd FileType markdown nnoremap &lt;space&gt;ss :term aspell -c -M &quot;%&quot;&lt;CR&gt;i
-  autocmd FileType tex,markdown nnoremap &lt;space&gt;S :term languagetool  &quot;%&quot;&lt;CR&gt;i
+<pre tabindex="0"><code>&#34;spell check 
+  autocmd FileType tex nnoremap &lt;space&gt;ss :term aspell -c -t &#34;%&#34;&lt;CR&gt;i
+  autocmd FileType markdown nnoremap &lt;space&gt;ss :term aspell -c -M &#34;%&#34;&lt;CR&gt;i
+  autocmd FileType tex,markdown nnoremap &lt;space&gt;S :term languagetool  &#34;%&#34;&lt;CR&gt;i
   nnoremap &lt;space&gt;sl :LanguageToolCheck&lt;CR&gt;
-&quot;Word count
+&#34;Word count
   autocmd FileType tex map &lt;F3&gt; :w !detex \| wc -w&lt;CR&gt;
   autocmd FileType tex inoremap &lt;F3&gt; &lt;Esc&gt;:w !detex \| wc -w&lt;CR&gt;
-&quot;vim spell check 
+&#34;vim spell check 
 goes to next word and corrects it in insert mode
   inoremap &lt;C-s&gt; &lt;c-g&gt;u&lt;Esc&gt;]s1z=a
   inoremap &lt;C-q&gt; &lt;c-g&gt;u&lt;Esc&gt;[s1z=a
@@ -366,7 +432,7 @@ goes to next word and corrects it from normal mode
 <li>great for listing things or transforming text and replacing</li>
 </ul>
 <h2 id="how-to-create-a-vim-mode">how to create a vim mode</h2>
-<pre tabindex="0"><code>I would like to have the user call my function and then have the function request user input but I do not want the user to have to type 'enter' after typing a letter as is required by the &quot;input()&quot; function. For instance, the user should be able to type single letter commands like 'h','j','k','l' and each letter typed would loop around my function until the user typed 'x' for exit. If I use &quot;input()&quot; then the user would have to type 'h&lt;enter&gt;','j&lt;enter&gt;'...
+<pre tabindex="0"><code>I would like to have the user call my function and then have the function request user input but I do not want the user to have to type &#39;enter&#39; after typing a letter as is required by the &#34;input()&#34; function. For instance, the user should be able to type single letter commands like &#39;h&#39;,&#39;j&#39;,&#39;k&#39;,&#39;l&#39; and each letter typed would loop around my function until the user typed &#39;x&#39; for exit. If I use &#34;input()&#34; then the user would have to type &#39;h&lt;enter&gt;&#39;,&#39;j&lt;enter&gt;&#39;...
 
 Any suggestions on how I might be able to do this?
 
@@ -378,23 +444,23 @@ Got it working:
 
 function! s:getchar()
   let c = getchar()
-  if c =~ '^\d\+$'
+  if c =~ &#39;^\d\+$&#39;
     let c = nr2char(c)
   endif
   return c
 endfunction
 
-&quot; Interactively change the window size
+&#34; Interactively change the window size
 function! InteractiveWindow()
-  let char = &quot;s&quot;
-  while char =~ '^\w$'
-    echo &quot;(InteractiveWindow) TYPE: h,j,k,l to resize or a for auto resize&quot;
+  let char = &#34;s&#34;
+  while char =~ &#39;^\w$&#39;
+    echo &#34;(InteractiveWindow) TYPE: h,j,k,l to resize or a for auto resize&#34;
     let char = s:getchar()
-    if char == &quot;h&quot; | call SetWindowSize( &quot;incr&quot; ,-5 ,0 ) | endif
-    if char == &quot;j&quot; | call SetWindowSize( &quot;incr&quot;  ,0 ,5 ) | endif
-    if char == &quot;k&quot; | call SetWindowSize( &quot;incr&quot;  ,0 ,-5) | endif
-    if char == &quot;l&quot; | call SetWindowSize( &quot;incr&quot;  ,5 ,0 ) | endif
-    if char == &quot;a&quot; | call SetWindowSize( &quot;abs&quot;  ,0  ,0 ) | endif
+    if char == &#34;h&#34; | call SetWindowSize( &#34;incr&#34; ,-5 ,0 ) | endif
+    if char == &#34;j&#34; | call SetWindowSize( &#34;incr&#34;  ,0 ,5 ) | endif
+    if char == &#34;k&#34; | call SetWindowSize( &#34;incr&#34;  ,0 ,-5) | endif
+    if char == &#34;l&#34; | call SetWindowSize( &#34;incr&#34;  ,5 ,0 ) | endif
+    if char == &#34;a&#34; | call SetWindowSize( &#34;abs&#34;  ,0  ,0 ) | endif
     redraw
   endwhile
 endfunction
@@ -403,16 +469,16 @@ endfunction
 <li><a href="https://www.youtube.com/watch?v=SZ-xHGD7sMc&amp;list=PLcTu2VkAIIWzD2kicFNHN2c35XQCeZdsv&amp;index=9">Path to mastery vim conf 2020</a></li>
 </ul>
 <pre tabindex="0"><code>:norm
-&quot; this is go to normal mode then insert a double quote at the beginning
+&#34; this is go to normal mode then insert a double quote at the beginning
 
-:%norm I&quot;
+:%norm I&#34;
 
 g/pattern/norm &lt;commands&gt;
-&quot;any line with a double space at the beginning&quot;
+&#34;any line with a double space at the beginning&#34;
 g/^  /norm &lt;commands&gt;
-&quot;selecting everything in second set of  double quotes then lowercase them&quot;
-%norm v2in&quot;gu 
-  &quot;id&quot; &quot;name&quot;
+&#34;selecting everything in second set of  double quotes then lowercase them&#34;
+%norm v2in&#34;gu 
+  &#34;id&#34; &#34;name&#34;
 </code></pre><h2 id="tricks">tricks</h2>
 <ul>
 <li><code>:.</code> in command mode means current line</li>
@@ -461,9 +527,9 @@ g/^  /norm &lt;commands&gt;
 <p>More on <a href="https://github.com/rwxrob/boost">https://github.com/rwxrob/boost</a></p>
 <p>for i in bear hamburger lighbulb pomo; do echo &ldquo;ecmoji[$i]&quot;=; done
 for i in 1 2 3 4 5 6; do printf &ldquo;$i&rdquo;,; done;</p>
-<p>list1 = [&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;,&rsquo;d']
+<p>list1 = [&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;,&rsquo;d&rsquo;]
 for i in list1:print(i)</p>
-<p>for i in [&lsquo;1&rsquo;,&lsquo;2&rsquo;,&lsquo;3&rsquo;]:print(i+&rdquo;,&quot;,end=' &lsquo;)</p>
+<p>for i in [&lsquo;1&rsquo;,&lsquo;2&rsquo;,&lsquo;3&rsquo;]:print(i+&rdquo;,&quot;,end=&rsquo; &lsquo;)</p>
 <p>for i in newlist newlist oldlist wowlist danglist dulist; do  printf $i, ; done</p>
 <p>print(&ldquo;1&rdquo;) if 1==1 else print(&ldquo;2&rdquo;) if 2==2 else print(&ldquo;3&rdquo;) if 3==3 else print(&ldquo;4&rdquo;)</p>
 <h2 id="functions">Functions</h2>
@@ -474,7 +540,7 @@ for i in list1:print(i)</p>
 </ul>
 <pre tabindex="0"><code>function! Literate()
   setlocal spell spelllang=en_us
-  setlocal formatoptions=t1 &quot;t = textwrap, 1 = break line before 1 letter words
+  setlocal formatoptions=t1 &#34;t = textwrap, 1 = break line before 1 letter words
   setlocal textwidth=120
   setlocal noautoindent
 endfunction
@@ -544,24 +610,24 @@ com! lit call Literate()
 <h1 id="vim-vimwiki-slimming">vim vimwiki slimming</h1>
 <ul>
 <li>
-<p><input checked="" disabled="" type="checkbox"> i want vimwiki table mode</p>
+<p>i want vimwiki table mode</p>
 </li>
 <li>
-<p><input checked="" disabled="" type="checkbox"> i want [[ and ]]  mappings</p>
+<p>i want [[ and ]]  mappings</p>
 </li>
 <li>
-<p><input checked="" disabled="" type="checkbox"> i want folding (look in ~/.config/nvim/ftplugin/vimwiki.vim)</p>
+<p>i want folding (look in ~/.config/nvim/ftplugin/vimwiki.vim)</p>
 </li>
 <li>
-<p><input checked="" disabled="" type="checkbox"> i want to remap tab and enter</p>
+<p>i want to remap tab and enter</p>
 </li>
 <li>
-<p><input disabled="" type="checkbox"> folding</p>
+<p>folding</p>
 <ul>
-<li><input disabled="" type="checkbox"> <a href="https://jdhao.github.io/2019/08/16/nvim_config_folding/">https://jdhao.github.io/2019/08/16/nvim_config_folding/</a></li>
-<li><input disabled="" type="checkbox"> <a href="https://stackoverflow.com/questions/3828606/vim-markdown-folding">https://stackoverflow.com/questions/3828606/vim-markdown-folding</a></li>
-<li><input disabled="" type="checkbox"> <a href="https://stackoverflow.com/questions/27385161/vim-slows-down-when-using-fold-expr">https://stackoverflow.com/questions/27385161/vim-slows-down-when-using-fold-expr</a></li>
-<li><input disabled="" type="checkbox"> <a href="http://vimcasts.org/episodes/writing-a-custom-fold-expression/">http://vimcasts.org/episodes/writing-a-custom-fold-expression/</a></li>
+<li><a href="https://jdhao.github.io/2019/08/16/nvim_config_folding/">https://jdhao.github.io/2019/08/16/nvim_config_folding/</a></li>
+<li><a href="https://stackoverflow.com/questions/3828606/vim-markdown-folding">https://stackoverflow.com/questions/3828606/vim-markdown-folding</a></li>
+<li><a href="https://stackoverflow.com/questions/27385161/vim-slows-down-when-using-fold-expr">https://stackoverflow.com/questions/27385161/vim-slows-down-when-using-fold-expr</a></li>
+<li><a href="http://vimcasts.org/episodes/writing-a-custom-fold-expression/">http://vimcasts.org/episodes/writing-a-custom-fold-expression/</a></li>
 </ul>
 </li>
 </ul>
@@ -698,22 +764,22 @@ autocmd TermOpen * tnoremap <!-- raw HTML omitted --> <!-- raw HTML omitted --> 
 </tbody>
 </table>
 <h1 id="vim-with-focus-writer-style">vim with focus-writer style</h1>
-<pre tabindex="0"><code>&quot;conner mcdaniel
-&quot;Using vim in place of WriteRoom
+<pre tabindex="0"><code>&#34;conner mcdaniel
+&#34;Using vim in place of WriteRoom
 
-&quot;Oct 12, 2011
+&#34;Oct 12, 2011
 
-&quot;Fullscreen editors, also called distraction-free editors, have become popular lately. It’s appealing to have nothing but the words you’re editing before you. However, these editors are often lacking some of the most elemental of features and sometimes cost money. Fortunately, it’s pretty easy to make MacVim into an exact replica of WriteRoom (or gVim into DarkRoom on Windows). Put the following into your .vimrc:
+&#34;Fullscreen editors, also called distraction-free editors, have become popular lately. It’s appealing to have nothing but the words you’re editing before you. However, these editors are often lacking some of the most elemental of features and sometimes cost money. Fortunately, it’s pretty easy to make MacVim into an exact replica of WriteRoom (or gVim into DarkRoom on Windows). Put the following into your .vimrc:
 
 let g:writeroom = 0
 let g:transparency = &amp;transparency
 function! WriteRoom()
-   if has(&quot;gui_running&quot;)
+   if has(&#34;gui_running&#34;)
       if g:writeroom == 0
          let g:writeroom = 1 set columns=80
          set fullscreen set linebreak set nocursorline
          set nolist set nonumber set noshowmode
-         set rulerformat=%{strftime('%b %e %I:%M %p')}
+         set rulerformat=%{strftime(&#39;%b %e %I:%M %p&#39;)}
          set transparency=0
          hi NonText guifg=bg
       else
@@ -726,7 +792,7 @@ function! WriteRoom()
    endif
 endfunction
 
-&quot;This creates a function that you can execute to put MacVim into WriteRoom mode. If you don’t want the clock display then you can comment out the lines about rulerformat. Personally, I like to keep track of time when I’m in fullscreen mode. You can also change the lines and columns to best fit your screen size. Then, you can map a shortcut to execute the function. I use gw for normal mode and \w for insert mode.
+&#34;This creates a function that you can execute to put MacVim into WriteRoom mode. If you don’t want the clock display then you can comment out the lines about rulerformat. Personally, I like to keep track of time when I’m in fullscreen mode. You can also change the lines and columns to best fit your screen size. Then, you can map a shortcut to execute the function. I use gw for normal mode and \w for insert mode.
 nmap gw :exe WriteRoom()&lt;cr&gt;
 imap &lt;leader&gt;w &lt;esc&gt;:exe WriteRoom()&lt;cr&gt;i
 </code></pre><h1 id="vim-outlining-drawers-tag-sidebars">vim outlining drawers tag sidebars</h1>
@@ -754,7 +820,7 @@ Here are a few quick-fix list commands to get you up and running fast:
     :copen to open up the quickfix list in a window (:cclose to close)
     :cwindow to open quickfix list window only if there are errors
     :cc to display the current error/match.
-    May want to use better mappings for :cnext and friends. I suggest Tim Pope's unimpaired plugin
+    May want to use better mappings for :cnext and friends. I suggest Tim Pope&#39;s unimpaired plugin
 
 For more help see the following:
 
@@ -769,18 +835,18 @@ cn cp cl cl 0,5
 cexpr
 </code></pre><h1 id="vim-fold-jumping">vim fold jumping</h1>
 <p><a href="https://stackoverflow.com/questions/9403098/is-it-possible-to-jump-to-the-next-closed-fold-in-vim">https://stackoverflow.com/questions/9403098/is-it-possible-to-jump-to-the-next-closed-fold-in-vim</a></p>
-<pre tabindex="0"><code>nnoremap &lt;silent&gt; J :call NextClosedFold('j')&lt;cr&gt;
-nnoremap &lt;silent&gt; K :call NextClosedFold('k')&lt;cr&gt;
-cexpr system('java ' . shellescape(expand('%:r')))
-cexpr system('topydo -c /home/reece/.topydo.conf') | cl
+<pre tabindex="0"><code>nnoremap &lt;silent&gt; J :call NextClosedFold(&#39;j&#39;)&lt;cr&gt;
+nnoremap &lt;silent&gt; K :call NextClosedFold(&#39;k&#39;)&lt;cr&gt;
+cexpr system(&#39;java &#39; . shellescape(expand(&#39;%:r&#39;)))
+cexpr system(&#39;topydo -c /home/reece/.topydo.conf&#39;) | cl
 
 function! NextClosedFold(dir)
-    let cmd = 'norm!z' . a:dir
+    let cmd = &#39;norm!z&#39; . a:dir
     let view = winsaveview()
     let [l0, l, open] = [0, view.lnum, 1]
     while l != l0 &amp;&amp; open
         exe cmd
-        let [l0, l] = [l, line('.')]
+        let [l0, l] = [l, line(&#39;.&#39;)]
         let open = foldclosed(l) &lt; 0
     endwhile
     if open
@@ -791,8 +857,8 @@ endfunction
 <p><a href="https://github.com/neoclide/coc-lists">https://github.com/neoclide/coc-lists</a></p>
 <p>replaces maps history ripgrep</p>
 <h1 id="folds">Folds</h1>
-<pre tabindex="0"><code>zR		Open all folds.  This sets 'foldlevel' to highest fold level.
-zM		Close all folds: set 'foldlevel' to 0.
+<pre tabindex="0"><code>zR		Open all folds.  This sets &#39;foldlevel&#39; to highest fold level.
+zM		Close all folds: set &#39;foldlevel&#39; to 0.
 </code></pre><h2 id="moving-over-folds">MOVING OVER FOLDS</h2>
 <table>
 <thead>
@@ -828,10 +894,15 @@ zM		Close all folds: set 'foldlevel' to 0.
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2021/05/22/instructions_samsung_galaxy_tab_2/" data-toggle="tooltip" data-placement="top" title="Samsung Galaxy Tab 2 custom ROMs and thoughts">&larr;
+                        <a href="" data-toggle="tooltip" data-placement="top" title="Samsung Galaxy Tab 2 custom ROMs and thoughts">&larr;
                             Previous Post</a>
                     </li>
                     
+                    
+                    <li class="next">
+                        <a href="" data-toggle="tooltip" data-placement="top" title="Referencing with zotero and other tools">Next
+                            Post &rarr;</a>
+                    </li>
                     
                 </ul>
                 
@@ -884,6 +955,12 @@ zM		Close all folds: set 'foldlevel' to 0.
                         
                         
                         
+                        <a href="/tags/bibliography" title="bibliography">
+                            bibliography
+                        </a>
+                        
+                        
+                        
                         <a href="/tags/design" title="design">
                             design
                         </a>
@@ -892,6 +969,18 @@ zM		Close all folds: set 'foldlevel' to 0.
                         
                         <a href="/tags/development" title="development">
                             development
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/flask" title="flask">
+                            flask
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/flutter" title="flutter">
+                            flutter
                         </a>
                         
                         
@@ -922,6 +1011,42 @@ zM		Close all folds: set 'foldlevel' to 0.
                         
                         <a href="/tags/photography" title="photography">
                             photography
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/php" title="php">
+                            php
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/programming" title="programming">
+                            programming
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/projects" title="projects">
+                            projects
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/python" title="python">
+                            python
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/referencing" title="referencing">
+                            referencing
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/research" title="research">
+                            research
                         </a>
                         
                         
@@ -1008,7 +1133,7 @@ zM		Close all folds: set 'foldlevel' to 0.
             
                 </ul>
 		<p class="copyright text-muted">
-                    Copyright &copy; Reece&#39;s Blog 2021
+                    Copyright &copy; Reece&#39;s Blog 2022
                     <br>
                     <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
                     <iframe

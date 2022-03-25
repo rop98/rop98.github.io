@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bibliography on Reece&#39;s Blog</title>
+    <link>/tags/bibliography/</link>
+    <description>Recent content in bibliography on Reece&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>My Name</copyright>
+    <lastBuildDate>Wed, 23 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/bibliography/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Referencing with zotero and other tools</title>
+      <link>/2022/02/23/referencingbibliographyzotero/</link>
+      <pubDate>Wed, 23 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/02/23/referencingbibliographyzotero/</guid>
+      <description>2022-02-23 cool zotero tools  GitHub - avram/zandy: Zotero on Android GitHub - ethanwillis/zotero-scihub: A plugin that will automatically download PDFs of zotero items from sci-hub GitHub - bwiernik/zotero-tools: A collection of tools for use with the Zotero reference management software GitHub - jbaiter/zotero-cli: Command-line interface for Zotero GitHub - egh/zotxt: zotxt: a Zotero extension for text  2021-12-06 WORKFLOW WITH ZOTERO &amp;amp; GOOGLE DOCS/WORD : zotero prefs -&amp;gt; export -&amp;gt; harvard 2021-12-06 WORKFLOW WITH ZOTERO AND LATEX PREFERENCES   SETTING HTML OPENER : XDG MIME QUERY FOR HTML FILES AND XDG-MIME DEFAULT FOR HTML FILES</description>
+    </item>
+    
+  </channel>
+</rss>

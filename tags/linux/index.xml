@@ -14,7 +14,8 @@
       <pubDate>Mon, 25 Oct 2021 00:13:50 +0000</pubDate>
       
       <guid>/2021/10/25/vim/</guid>
-      <description>Vim for college pattern matching is amazing \d and :help regular Character classes:	*/character-classes* magic nomagic	matches ~ |/\i|	\i	\i	identifier character (see &#39;isident&#39; option) |/\I|	\I	\I	like &amp;quot;\i&amp;quot;, but excluding digits |/\k|	\k	\k	keyword character (see &#39;iskeyword&#39; option) |/\K|	\K	\K	like &amp;quot;\k&amp;quot;, but excluding digits |/\f|	\f	\f	file name character (see &#39;isfname&#39; option) |/\F|	\F	\F	like &amp;quot;\f&amp;quot;, but excluding digits |/\p|	\p	\p	printable character (see &#39;isprint&#39; option) |/\P|	\P	\P	like &amp;quot;\p&amp;quot;, but excluding digits |/\s|	\s	\s	whitespace character: &amp;lt;Space&amp;gt; and &amp;lt;Tab&amp;gt; |/\S|	\S	\S	non-whitespace character; opposite of \s |/\d|	\d	\d	digit:	[0-9] |/\D|	\D	\D	non-digit:	[^0-9] |/\x|	\x	\x	hex digit:	[0-9A-Fa-f] |/\X|	\X	\X	non-hex digit:	[^0-9A-Fa-f] |/\o|	\o	\o	octal digit:	[0-7] |/\O|	\O	\O	non-octal digit:	[^0-7] |/\w|	\w	\w	word character:	[0-9A-Za-z_] |/\W|	\W	\W	non-word character:	[^0-9A-Za-z_] |/\h|	\h	\h	head of word character:	[A-Za-z_] |/\H|	\H	\H	non-head of word character:	[^A-Za-z_] |/\a|	\a	\a	alphabetic character:	[A-Za-z] |/\A|	\A	\A	non-alphabetic character:	[^A-Za-z] |/\l|	\l	\l	lowercase character:	[a-z] |/\L|	\L	\L	non-lowercase character:	[^a-z] |/\u|	\u	\u	uppercase character:	[A-Z] |/\U|	\U	\U	non-uppercase character	[^A-Z] |/\_|	\_x	\_x	where x is any of the characters above: character class with end-of-line included (end of character classes) magic nomagic	matches ~ |/\e|	\e	\e	&amp;lt;Esc&amp;gt; |/\t|	\t	\t	&amp;lt;Tab&amp;gt; |/\r|	\r	\r	&amp;lt;CR&amp;gt; |/\b|	\b	\b	&amp;lt;BS&amp;gt; |/\n|	\n	\n	end-of-line |/~|	~	\~	last given substitute string |/\1|	\1	\1	same string as matched by first \(\) |/\2|	\2	\2	Like &amp;quot;\1&amp;quot;, but uses second \(\)  so vim has the ability to do quick pattern matching with :s and with searching vim also can repeat the last : command with @:  general vim :set spell!</description>
+      <description>vim plugins i don&amp;rsquo;t need rn 2022-02-05  far ultisnips snippets sneak css-color dart-vim-plugin fold-search todo.txt tex-fold wal.vim colorschemes  vim tips 2022/02/01 11:38  gi go back to where you just inserted text, g; actually go back to where you just inserted text, if you misclicked g, go forward in the insert mode change list  Vim for college relative numbering and jumping with softwrap https://stackoverflow.com/questions/20975928/moving-the-cursor-through-long-soft-wrapped-lines-in-vim
+The problem with the often used</description>
     </item>
     
     <item>
@@ -23,7 +24,7 @@
       <pubDate>Sat, 22 May 2021 00:13:50 +0000</pubDate>
       
       <guid>/2021/05/22/make/</guid>
-      <description>Make files for automation for projects (installing deleting options) General Layout  OUTPUT: OPTIONAL DEPENDENCIES COMMAND TO PRODUCE OUTPUT tester.text: echo &amp;quot;this is a test&amp;quot; &amp;gt; tester.txt install: cp file ~/bin/ uninstall: rm file ~/bin/ DEPENDANCIES  i think dependancies are mapped to targets it will run the dependancy first if you do make tester2.txt  tester2.txt: tester.txt cat tester.txt &amp;gt; tester2.txt tester.txt: echo &amp;quot;this is a test&amp;quot; &amp;gt; tester.txt MACROS  Sort of like variables in other languages set a macro / assign a variable with &amp;lsquo;var = value&amp;rsquo; use a macro / use a var with $(var) VARIABLENAME = VALUE OF VARIABLE they expand using syntax $(VARIABLENAME)  TMP = tester1.</description>
+      <description>Make files for automation for projects (installing deleting options) General Layout  OUTPUT: OPTIONAL DEPENDENCIES COMMAND TO PRODUCE OUTPUT tester.text: echo &amp;#34;this is a test&amp;#34; &amp;gt; tester.txt install: cp file ~/bin/ uninstall: rm file ~/bin/ DEPENDANCIES  i think dependancies are mapped to targets it will run the dependancy first if you do make tester2.txt  tester2.txt: tester.txt cat tester.txt &amp;gt; tester2.txt tester.txt: echo &amp;#34;this is a test&amp;#34; &amp;gt; tester.txt MACROS  Sort of like variables in other languages set a macro / assign a variable with &amp;lsquo;var = value&amp;rsquo; use a macro / use a var with $(var) VARIABLENAME = VALUE OF VARIABLE they expand using syntax $(VARIABLENAME)  TMP = tester1.</description>
     </item>
     
     <item>
@@ -51,6 +52,17 @@ Grayscale convert source.png -colorspace Gray destination.png
 Invert colors: convert input.png -channel RGB -negate output.png
 rotate image (-90 degrees) convert -rotate -90 input.png output.png
 Resize convert image.jpg -resize 1024x768 output_file.jpg convert source.jpg -resize 75% destination.</description>
+    </item>
+    
+    <item>
+      <title>Scripting tricks and tips</title>
+      <link>/1/01/01/shell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/shell/</guid>
+      <description>References NEXT NEXT - READ COREUTILS 1. [ ] http://mywiki.kooledge.org/BashPitfalls 2. [ ] http://mywiki.wooledge.org/BashGuide 3. [ ] http://www.sobell.com/CR3/index.html 4. [ ] http://cli.learncodethehardway.org/book/ 5. [ ] https://google.github.io/styleguide/shell.xml GO
+How to rewrite shell scripts in go https://www.youtube.com/watch?v=gKP1r4T0xVg
+Bash tips  how to break out of read with escape linux - Create interrupt in bash by keys like ENTER Or ESC - Stack Overflow  Following works ^M for ENTER and ^[ for ESC but may stty intr ^M stty intr ^[ but after cannot use ENTER to restore default stty intr ^C for ternary if else { command } is how you group it</description>
     </item>
     
   </channel>

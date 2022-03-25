@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on Reece&#39;s Blog</title>
+    <link>/tags/programming/</link>
+    <description>Recent content in programming on Reece&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>My Name</copyright><atom:link href="/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scripting tricks and tips</title>
+      <link>/1/01/01/shell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/shell/</guid>
+      <description>References NEXT NEXT - READ COREUTILS 1. [ ] http://mywiki.kooledge.org/BashPitfalls 2. [ ] http://mywiki.wooledge.org/BashGuide 3. [ ] http://www.sobell.com/CR3/index.html 4. [ ] http://cli.learncodethehardway.org/book/ 5. [ ] https://google.github.io/styleguide/shell.xml GO
+How to rewrite shell scripts in go https://www.youtube.com/watch?v=gKP1r4T0xVg
+Bash tips  how to break out of read with escape linux - Create interrupt in bash by keys like ENTER Or ESC - Stack Overflow  Following works ^M for ENTER and ^[ for ESC but may stty intr ^M stty intr ^[ but after cannot use ENTER to restore default stty intr ^C for ternary if else { command } is how you group it</description>
+    </item>
+    
+  </channel>
+</rss>

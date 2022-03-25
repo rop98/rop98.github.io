@@ -7,14 +7,65 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>My Name</copyright>
-    <lastBuildDate>Mon, 25 Oct 2021 00:13:50 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maikutlo TV series Tracking web site</title>
+      <link>/2022/03/12/project-maikutlo/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/03/12/project-maikutlo/</guid>
+      <description>User manual &amp;ndash; Maikutlo  Introduction This user manual contains all the essential information that a user needs to fully utilise this information system. It includes descriptions of all functions, alternate use modes, procedures and processes to be followed in order to use and access all system functionalities. Step by step visual aids are also utilised for clarity.
+Getting started Maikutlo is a web-based series tracker. All you need is a device with a web browser that has a stable internet connection.</description>
+    </item>
+    
+    <item>
+      <title>Maximium Intensity Flutter workout app</title>
+      <link>/2022/03/12/project-maxintensity/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/03/12/project-maxintensity/</guid>
+      <description>Project lead for a fitness mobile application for both trainers and clients
+Description: A cross-platform mobile application using Flutter and Dart.
+Tooling: Vim, Flutter, Dart, Firestore, Provider, Trello, Teams, Figma, Inkscape, LucidCharts, Draw.io, PlantUML, Markdown, Shell
+Methodology: Agile
+Design Pattern: Provider, MVC
+Version control and Deployment: Git and Github
+Vim was used as my primary IDE with the dart lsp.
+Learned a bit of dart, learned about widgets and the biggest obstacle was state management.</description>
+    </item>
+    
+    <item>
+      <title>PHP Stock Photography Ecommerce site</title>
+      <link>/2022/03/12/project-phpecommerce/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/03/12/project-phpecommerce/</guid>
+      <description>Created a php stock photography site with paypal integration
+Description: A Web site with the ability for client to add, rearrange and sell photos. As well as displaying thumbnails on the site to prevent theft.
+Tooling: Vim, PHP, HTML, CSS, Javascript, MYSQL, ImageMagick, Bootstrap, PayPal, Trello, Figma, PlantUML, Markdown, Shell
+Methodology: Agile
+Design Pattern: Procedural PHP with templating
+Version control and Deployment: Git, XAMPP, phpMyAdmin
+ </description>
+    </item>
+    
+    <item>
+      <title>Referencing with zotero and other tools</title>
+      <link>/2022/02/23/referencingbibliographyzotero/</link>
+      <pubDate>Wed, 23 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/02/23/referencingbibliographyzotero/</guid>
+      <description>2022-02-23 cool zotero tools  GitHub - avram/zandy: Zotero on Android GitHub - ethanwillis/zotero-scihub: A plugin that will automatically download PDFs of zotero items from sci-hub GitHub - bwiernik/zotero-tools: A collection of tools for use with the Zotero reference management software GitHub - jbaiter/zotero-cli: Command-line interface for Zotero GitHub - egh/zotxt: zotxt: a Zotero extension for text  2021-12-06 WORKFLOW WITH ZOTERO &amp;amp; GOOGLE DOCS/WORD : zotero prefs -&amp;gt; export -&amp;gt; harvard 2021-12-06 WORKFLOW WITH ZOTERO AND LATEX PREFERENCES   SETTING HTML OPENER : XDG MIME QUERY FOR HTML FILES AND XDG-MIME DEFAULT FOR HTML FILES</description>
+    </item>
+    
     <item>
       <title>Running Vim notes</title>
       <link>/2021/10/25/vim/</link>
       <pubDate>Mon, 25 Oct 2021 00:13:50 +0000</pubDate>
       
       <guid>/2021/10/25/vim/</guid>
-      <description>Vim for college pattern matching is amazing \d and :help regular Character classes:	*/character-classes* magic nomagic	matches ~ |/\i|	\i	\i	identifier character (see &#39;isident&#39; option) |/\I|	\I	\I	like &amp;quot;\i&amp;quot;, but excluding digits |/\k|	\k	\k	keyword character (see &#39;iskeyword&#39; option) |/\K|	\K	\K	like &amp;quot;\k&amp;quot;, but excluding digits |/\f|	\f	\f	file name character (see &#39;isfname&#39; option) |/\F|	\F	\F	like &amp;quot;\f&amp;quot;, but excluding digits |/\p|	\p	\p	printable character (see &#39;isprint&#39; option) |/\P|	\P	\P	like &amp;quot;\p&amp;quot;, but excluding digits |/\s|	\s	\s	whitespace character: &amp;lt;Space&amp;gt; and &amp;lt;Tab&amp;gt; |/\S|	\S	\S	non-whitespace character; opposite of \s |/\d|	\d	\d	digit:	[0-9] |/\D|	\D	\D	non-digit:	[^0-9] |/\x|	\x	\x	hex digit:	[0-9A-Fa-f] |/\X|	\X	\X	non-hex digit:	[^0-9A-Fa-f] |/\o|	\o	\o	octal digit:	[0-7] |/\O|	\O	\O	non-octal digit:	[^0-7] |/\w|	\w	\w	word character:	[0-9A-Za-z_] |/\W|	\W	\W	non-word character:	[^0-9A-Za-z_] |/\h|	\h	\h	head of word character:	[A-Za-z_] |/\H|	\H	\H	non-head of word character:	[^A-Za-z_] |/\a|	\a	\a	alphabetic character:	[A-Za-z] |/\A|	\A	\A	non-alphabetic character:	[^A-Za-z] |/\l|	\l	\l	lowercase character:	[a-z] |/\L|	\L	\L	non-lowercase character:	[^a-z] |/\u|	\u	\u	uppercase character:	[A-Z] |/\U|	\U	\U	non-uppercase character	[^A-Z] |/\_|	\_x	\_x	where x is any of the characters above: character class with end-of-line included (end of character classes) magic nomagic	matches ~ |/\e|	\e	\e	&amp;lt;Esc&amp;gt; |/\t|	\t	\t	&amp;lt;Tab&amp;gt; |/\r|	\r	\r	&amp;lt;CR&amp;gt; |/\b|	\b	\b	&amp;lt;BS&amp;gt; |/\n|	\n	\n	end-of-line |/~|	~	\~	last given substitute string |/\1|	\1	\1	same string as matched by first \(\) |/\2|	\2	\2	Like &amp;quot;\1&amp;quot;, but uses second \(\)  so vim has the ability to do quick pattern matching with :s and with searching vim also can repeat the last : command with @:  general vim :set spell!</description>
+      <description>vim plugins i don&amp;rsquo;t need rn 2022-02-05  far ultisnips snippets sneak css-color dart-vim-plugin fold-search todo.txt tex-fold wal.vim colorschemes  vim tips 2022/02/01 11:38  gi go back to where you just inserted text, g; actually go back to where you just inserted text, if you misclicked g, go forward in the insert mode change list  Vim for college relative numbering and jumping with softwrap https://stackoverflow.com/questions/20975928/moving-the-cursor-through-long-soft-wrapped-lines-in-vim
+The problem with the often used</description>
     </item>
     
     <item>
@@ -34,7 +85,7 @@ I did not like the original ROM running on it, so I decided to see if more perfo
       <pubDate>Sat, 22 May 2021 00:13:50 +0000</pubDate>
       
       <guid>/2021/05/22/make/</guid>
-      <description>Make files for automation for projects (installing deleting options) General Layout  OUTPUT: OPTIONAL DEPENDENCIES COMMAND TO PRODUCE OUTPUT tester.text: echo &amp;quot;this is a test&amp;quot; &amp;gt; tester.txt install: cp file ~/bin/ uninstall: rm file ~/bin/ DEPENDANCIES  i think dependancies are mapped to targets it will run the dependancy first if you do make tester2.txt  tester2.txt: tester.txt cat tester.txt &amp;gt; tester2.txt tester.txt: echo &amp;quot;this is a test&amp;quot; &amp;gt; tester.txt MACROS  Sort of like variables in other languages set a macro / assign a variable with &amp;lsquo;var = value&amp;rsquo; use a macro / use a var with $(var) VARIABLENAME = VALUE OF VARIABLE they expand using syntax $(VARIABLENAME)  TMP = tester1.</description>
+      <description>Make files for automation for projects (installing deleting options) General Layout  OUTPUT: OPTIONAL DEPENDENCIES COMMAND TO PRODUCE OUTPUT tester.text: echo &amp;#34;this is a test&amp;#34; &amp;gt; tester.txt install: cp file ~/bin/ uninstall: rm file ~/bin/ DEPENDANCIES  i think dependancies are mapped to targets it will run the dependancy first if you do make tester2.txt  tester2.txt: tester.txt cat tester.txt &amp;gt; tester2.txt tester.txt: echo &amp;#34;this is a test&amp;#34; &amp;gt; tester.txt MACROS  Sort of like variables in other languages set a macro / assign a variable with &amp;lsquo;var = value&amp;rsquo; use a macro / use a var with $(var) VARIABLENAME = VALUE OF VARIABLE they expand using syntax $(VARIABLENAME)  TMP = tester1.</description>
     </item>
     
     <item>
@@ -153,6 +204,71 @@ Syncthing is open source, syncthing can be run locally within your LAN without u
  regional spelling via underline. good and bad word lists via zw and zg. different language dictionaries via spelllang=lang  It is toggled in command mode via:
 :set spell!  Basic commands
 ]s next spelling mistake &amp;quot;including regional [s prev spelling mistake &amp;quot;including regional ]S next spelling mistake &amp;quot;not including regional ]S prev spelling mistake &amp;quot;not including regional  Vim&amp;rsquo;s spell checker also has the ability to add words to the dictionary.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/1/01/01/phponlinux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/phponlinux/</guid>
+      <description>References php builtin server undefined function undefined mysqli function php how to conect to dbs using pdo and mysql php detailed mysql and pdo crud
+Steps  install it with bitnami from their site it goes into opt lampp set up the ports configuration uncomment the mysqli extensions include the extension directory extension_dir = &amp;ldquo;/usr/lib/php/modules/&amp;rdquo; setup how to do the connection use /opt/lampp/bin/php to test properly change track_errors to off from on never use php always /opt/lampp/bin/php  FOR ME  figure out way to get phpserver to serve the mysqli modules mysqli_connect works but need to now use my way of accessing it use how i access it with mysqlroot i have to use 127.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/1/01/01/plantuml/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/plantuml/</guid>
+      <description>plantuml installing and running  sudo pacman -S graphviz plantuml plantuml (produces png)  state machine syntax [] = start node -&amp;gt; = coming from start node Pending = state name Pending : project = state transition name Lapsed -&amp;gt; [] = going to end node
+@startuml [*] -&amp;gt; Pending : Project Pending --&amp;gt; Active : [projectstartdate = currentdate] Active --&amp;gt; Lapsed : [projectfinishdate = currentdate] Lapsed --&amp;gt; [*] : after [6 months] @enduml Class diagram @startuml skinparam roundcorner 20 skinparam class { BackgroundColor #FFFFFF ArrowColor DarkGreen BorderColor DarkGreen } abstract class Person { #Id: string #name: string #age: int } class Employee { +Department: Department +Salary: Decimal } class Professor { +Expertise: String } class Student { +Grade: int +GradeLetter: Char +GraduationYear: Year +void UpdateGrade() } Person &amp;lt;|-- Employee Employee &amp;lt;|-- Professor Person &amp;lt;|-- Student @enduml Use case diagram @startuml left to right direction skinparam packageStyle rectangle actor Lecturer actor Student actor Admin rectangle University-System { Lecturer --&amp;gt; (Grade Exam) Lecturer --&amp;gt; (Manage Course) Lecturer ---&amp;gt; (Access Course Information) Student ---&amp;gt; (Access Course Information) Student ---&amp;gt; (Enroll in Course) Admin ---&amp;gt; (Access Course Information) Admin ---&amp;gt; (Manage Course) } @enduml @startuml left to right direction skinparam packageStyle rectangle skinparam roundcorner 20 skinparam usecase { BackgroundColor #FFFFFF ArrowColor DarkGreen BorderColor #5E00FF } actor Customer #white;line:5E00FF;line.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/1/01/01/umltools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/umltools/</guid>
+      <description>Uml tools i like to use Star uml work flow
+ tapping on element tapping on canvas tapping on element on canvas click on shortcut options to make branches and links to make a relationship  drag line and arrow tap on origin then end    visual paradigm workflow
+1 way
+ drag element onto canvas tap element tap resource catalog  other way
+ gesture system (ctrl and left click drag) straight line from object is resource catalog line from object to object is relationship link  other</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/1/01/01/writingdocumentation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/writingdocumentation/</guid>
+      <description>Writing documentation in markdown and asciidoc references  Markdown Style Guide - Ciro Santilli  Tools  all numbers under 10 should be written in full npm install write-good  for strong formal technical writing, this is good. also handles general grammar and tone   Pip install proselint  proselint is nice bc python. It is subjective   gem install mdl  CocInstall coc-markdownlint  USAGE: mdl filename mdl uses rules can turn off rules with -r ~MD0013,etc coc-markdownlint uses mdl but asynchronously     Gem install kramdown-asciidoc  USAGE: kramdown pathtofile -o output sometimes you write in markdown when you want to submit something and forget.</description>
+    </item>
+    
+    <item>
+      <title>Scripting tricks and tips</title>
+      <link>/1/01/01/shell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/shell/</guid>
+      <description>References NEXT NEXT - READ COREUTILS 1. [ ] http://mywiki.kooledge.org/BashPitfalls 2. [ ] http://mywiki.wooledge.org/BashGuide 3. [ ] http://www.sobell.com/CR3/index.html 4. [ ] http://cli.learncodethehardway.org/book/ 5. [ ] https://google.github.io/styleguide/shell.xml GO
+How to rewrite shell scripts in go https://www.youtube.com/watch?v=gKP1r4T0xVg
+Bash tips  how to break out of read with escape linux - Create interrupt in bash by keys like ENTER Or ESC - Stack Overflow  Following works ^M for ENTER and ^[ for ESC but may stty intr ^M stty intr ^[ but after cannot use ENTER to restore default stty intr ^C for ternary if else { command } is how you group it</description>
+    </item>
+    
+    <item>
+      <title>Zenity Cheetsheet</title>
+      <link>/1/01/01/zenity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/zenity/</guid>
+      <description>Info box zenity --info --text &amp;quot;Are you doing what you should be doing?&amp;quot; zenity --error --text &amp;quot;Are you doing what you should be doing?&amp;quot; zenity --entry --text &amp;quot;Where are you?&amp;quot; --entry-text &amp;quot;At home&amp;quot; zenity --file-selection --save --confirm-overwrite  Question   by default it gives yes/no
+  yes = 0 exit code
+  no = 1 exit code
+zenity &amp;ndash;question &amp;ndash;text &amp;ldquo;Are you sure you want to shutdown?&amp;rdquo;; echo $?</description>
     </item>
     
   </channel>

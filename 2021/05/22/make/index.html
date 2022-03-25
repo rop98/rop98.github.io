@@ -36,7 +36,7 @@
 
     <title>Short notes on make files-Devlog | Reece&#39;s Blog</title>
 
-    <link rel="canonical" href="/2021/05/22/make/">
+    <link rel="canonical" href="/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 
@@ -101,6 +101,8 @@
                     
 		    
                         <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/project/">PROJECTS</a></li>
                     
 
                     
@@ -212,7 +214,7 @@ OUTPUT: OPTIONAL DEPENDENCIES
 	COMMAND TO PRODUCE OUTPUT
 
 tester.text:
-  echo &quot;this is a test&quot; &gt; tester.txt
+  echo &#34;this is a test&#34; &gt; tester.txt
   
 install:
   cp file ~/bin/
@@ -228,7 +230,7 @@ uninstall:
   cat tester.txt &gt; tester2.txt
   
 tester.txt:
-  echo &quot;this is a test&quot; &gt; tester.txt
+  echo &#34;this is a test&#34; &gt; tester.txt
 </code></pre><h1 id="macros">MACROS</h1>
 <ul>
 <li>Sort of like variables in other languages</li>
@@ -244,7 +246,7 @@ $(OUTPUT): $(TMP)
   cat $(TMP) &gt; $(OUTPUT)
   
 $(TMP):
-  echo &quot;this is a test&quot; &gt; $(TMP)
+  echo &#34;this is a test&#34; &gt; $(TMP)
 </code></pre><h2 id="using-command-variables">USING COMMAND VARIABLES</h2>
 <ul>
 <li>for the dependency variable = value of variable</li>
@@ -258,10 +260,10 @@ $(OUTPUT): $(DEPS)
   cat $(DEPS) &gt; $(OUTPUT)
 
 #(TMP):
-  echo &quot;This is a a test&quot; &gt; $(TMP)
+  echo &#34;This is a a test&#34; &gt; $(TMP)
   
 #(TMP2):
-  echo &quot;this is a test2&quot; &gt; $(TMP2)
+  echo &#34;this is a test2&#34; &gt; $(TMP2)
 </code></pre><h2 id="using-inference-rules--if-rules-">USING INFERENCE RULES ( if rules )</h2>
 <ul>
 <li>converting different files between each other</li>
@@ -300,7 +302,7 @@ all: tester.txt
 .tmp.txt:
   cat $&lt; &gt; $@
   
-%% Now we can run 'make clean' and remove all text files
+%% Now we can run &#39;make clean&#39; and remove all text files
 clean:
   rm *.txt
 </code></pre>
@@ -311,13 +313,13 @@ clean:
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2021/05/22/recutilsnotes/" data-toggle="tooltip" data-placement="top" title="Short notes on recutils ">&larr;
+                        <a href="" data-toggle="tooltip" data-placement="top" title="Short notes on recutils ">&larr;
                             Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2021/05/22/instructions_samsung_galaxy_tab_2/" data-toggle="tooltip" data-placement="top" title="Samsung Galaxy Tab 2 custom ROMs and thoughts">Next
+                        <a href="" data-toggle="tooltip" data-placement="top" title="Samsung Galaxy Tab 2 custom ROMs and thoughts">Next
                             Post &rarr;</a>
                     </li>
                     
@@ -372,6 +374,12 @@ clean:
                         
                         
                         
+                        <a href="/tags/bibliography" title="bibliography">
+                            bibliography
+                        </a>
+                        
+                        
+                        
                         <a href="/tags/design" title="design">
                             design
                         </a>
@@ -380,6 +388,18 @@ clean:
                         
                         <a href="/tags/development" title="development">
                             development
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/flask" title="flask">
+                            flask
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/flutter" title="flutter">
+                            flutter
                         </a>
                         
                         
@@ -410,6 +430,42 @@ clean:
                         
                         <a href="/tags/photography" title="photography">
                             photography
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/php" title="php">
+                            php
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/programming" title="programming">
+                            programming
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/projects" title="projects">
+                            projects
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/python" title="python">
+                            python
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/referencing" title="referencing">
+                            referencing
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/research" title="research">
+                            research
                         </a>
                         
                         
@@ -496,7 +552,7 @@ clean:
             
                 </ul>
 		<p class="copyright text-muted">
-                    Copyright &copy; Reece&#39;s Blog 2021
+                    Copyright &copy; Reece&#39;s Blog 2022
                     <br>
                     <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
                     <iframe

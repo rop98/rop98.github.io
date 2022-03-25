@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Reece&#39;s Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="/img/home-bg-2.png">
+    <meta property="twitter:image" content="/img/home-bg-2.png" />
+    
+
+    
+    <meta name="title" content="Maikutlo TV series Tracking web site" />
+    <meta property="og:title" content="Maikutlo TV series Tracking web site" />
+    <meta property="twitter:title" content="Maikutlo TV series Tracking web site" />
+    
+
+    
+    <meta name="description" content="A TV series tracking website built with flask and tmdbapi ">
+    <meta property="og:description" content="A TV series tracking website built with flask and tmdbapi " />
+    <meta property="twitter:description" content="A TV series tracking website built with flask and tmdbapi " />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Vim, Emacs, Linux, Unix, Flutter, PHP, Javascript, Android, HTML, CSS, Microservice">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Maikutlo TV series Tracking web site-Devlog | Reece&#39;s Blog</title>
+
+    <link rel="canonical" href="/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Reece&#39;s Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/project/">PROJECTS</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-2.png')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/python" title="python">
+                            python
+                        </a>
+                        
+                        <a class="tag" href="/tags/flask" title="flask">
+                            flask
+                        </a>
+                        
+                        <a class="tag" href="/tags/projects" title="projects">
+                            projects
+                        </a>
+                        
+                    </div>
+                    <h1>Maikutlo TV series Tracking web site</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                Reece Petersen
+                             
+                            on 
+                            Saturday, March 12, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="user-manual----maikutlo">User manual &ndash; Maikutlo</h2>
+<hr>
+<h3 id="introduction">Introduction</h3>
+<p>This user manual contains all the essential information that a user
+needs to fully utilise this information system. It includes descriptions
+of all functions, alternate use modes, procedures and processes to be
+followed in order to use and access all system functionalities. Step by
+step visual aids are also utilised for clarity.</p>
+<h3 id="getting-started">Getting started</h3>
+<p>Maikutlo is a web-based series tracker. All you need is a device with a
+web browser that has a stable internet connection.</p>
+<h3 id="landing-page">Landing page</h3>
+<p>When a user visits the Maikutlo website, this is the first page that
+welcomes them to the destination. It is a homepage of sorts.</p>
+<p>
+  <img src="/.res/project-maikutlo/image1.png" alt="">
+
+</p>
+<h3 id="registration">Registration</h3>
+<p>On this page you get to create a user profile by filling out the
+registration form. The username is any name you would like to have
+displaying on your profile. The email and password supplied must have
+matching confirmation duplicates.</p>
+<p>
+  <img src="/.res/project-maikutlo/image2.png" alt="">
+
+</p>
+<h3 id="email-verification">Email Verification</h3>
+<p>After pressing the register button an email with an account verification
+link will be sent to your email address. Do check your spam folder if
+the email does not reflect on your inbox. You can then copy and paste
+the link into your URL or click on the hyperlink if active.</p>
+<p>
+  <img src="/.res/project-maikutlo/image3.png" alt="">
+
+</p>
+<h3 id="forgot-password">Forgot Password</h3>
+<p>If you forgot your password don&rsquo;t be worried. The forgot password button
+will direct you to the forgot password page so that a new one can be
+created again.</p>
+<p>
+  <img src="/.res/project-maikutlo/image4.png" alt="">
+
+</p>
+<p>After requesting for a password rest, you will be directed to the login
+page.</p>
+<p>
+  <img src="/.res/project-maikutlo/image5.png" alt="">
+
+</p>
+<p>Then check your emails for a reset password link. Do check your spam
+folder if the email does not reflect on your inbox. You can then copy
+and paste the link into your URL or click on the hyperlink if active.</p>
+<p>
+  <img src="/.res/project-maikutlo/image6.png" alt="">
+
+</p>
+<p>Then, you will be directed on to the forgot password page for a new
+password. The new password must match with the duplicate password for
+verification purposes.</p>
+<p>
+  <img src="/.res/project-maikutlo/image7.png" alt="">
+
+</p>
+<p>After clicking on the reset password button, the login page will be
+opened again so that you can login with the updated details.</p>
+<p>
+  <img src="/.res/project-maikutlo/image8.png" alt="">
+
+</p>
+<h3 id="login">Login</h3>
+<p>As a user with an existing account, the login button is selected which
+opens up the login page.</p>
+<p>
+  <img src="/.res/project-maikutlo/image9.png" alt="">
+
+</p>
+<h3 id="trending-page">Trending page</h3>
+<p>The trending page will provide the trending series overall, and will
+update the results daily</p>
+<p>
+  <img src="/.res/project-maikutlo/image10.png" alt="">
+
+</p>
+<h3 id="series-search-by-series-name">Series search by series name</h3>
+<p>The search by series function is done by giving the users a section to
+input a series name, and the system would then search for related series
+according to that query and display them as cards. On each card various
+information can be found those being; series rating, series music,
+series trailer, series information.</p>
+<p>an example of how the series search would work: (with scrubs as the
+query being used to search)</p>
+<p>
+  <img src="/.res/project-maikutlo/image11.png" alt="">
+
+</p>
+<p>After pressing search all related series will be displayed:</p>
+<p>
+  <img src="/.res/project-maikutlo/image12.png" alt="">
+
+</p>
+<p>The card information is given as follows indicated with icons: (a star
+for rating, music icon for series music and an I for series information)</p>
+<p>
+  <img src="/.res/project-maikutlo/image13.png" alt="">
+
+</p>
+<h3 id="series-search-by-genre">Series search by genre</h3>
+<p>Search by genre receives all related series similarly to searching by
+the series name, but instead of receiving a query, each series is
+fetched using the series name which compared to that specific series id.</p>
+<p>On the search page there is a search by genre button:</p>
+<p>
+  <img src="/.res/project-maikutlo/image14.png" alt="">
+
+</p>
+<p>On entering the genre page, you are able to switch between multiple
+genres and it will display all series which relate to that specific
+genre: (here the genre action &amp; adventure was used).</p>
+<p>
+  <img src="/.res/project-maikutlo/image15.png" alt="">
+
+</p>
+<h3 id="picking-a-different-genre-like-animation-for-example-will-give-different-results">Picking a different genre like animation for example will give different results</h3>
+<p>Results for animation:</p>
+<p>
+  <img src="/.res/project-maikutlo/image16.png" alt="">
+
+</p>
+<h3 id="link-to-youtube-trailers">Link to YouTube Trailers</h3>
+<p>Clicking on the YouTube icon on a series card will link you to the
+search for that particular series trailer.</p>
+<p>
+  <img src="/.res/project-maikutlo/image17.png" alt="">
+
+</p>
+<p>
+  <img src="/.res/project-maikutlo/image18.png" alt="">
+
+</p>
+<h3 id="link-to-whatsong-music-list">Link to Whatsong music List</h3>
+<p>Clicking on the Music icon on a series card will link you to the
+corresponding page on Whatsong if it exists.</p>
+<p>
+  <img src="/.res/project-maikutlo/image18.png" alt="">
+
+</p>
+<h3 id="series-details">Series Details</h3>
+<p>Clicking on the Info (i) icon on a series card or clicking on the image
+of the series will take you to the corresponding series detail page.</p>
+<p>This will contain a description of the series and synopsis of each
+season and episode if available.</p>
+<p>
+  <img src="/.res/project-maikutlo/image19.png" alt="">
+
+</p>
+<h3 id="link-to-episodes-music">Link to episodes music</h3>
+<p>Clicking on the YouTube and Music Button will link you to a YouTube
+search with the series title, season number and episode number.</p>
+<p>
+  <img src="/.res/project-maikutlo/image20.png" alt="">
+
+</p>
+<h3 id="users-watch-list">Users Watch List</h3>
+<p>On any of the browsing pages be it trending, genre or search there will
+be a button to Add with a plus above it, it will only show when a user
+is logged in and does not already have the series in their watch list.
+Clicking on this button will add the series to the user&rsquo;s watchlist.</p>
+<p>The watchlist is accessible in the navbar.</p>
+<p>
+  <img src="/.res/project-maikutlo/image21.png" alt="">
+
+</p>
+<p>Green button pictured above on the rightmost of the series card.</p>
+<p>
+  <img src="/.res/project-maikutlo/image22.png" alt="">
+
+</p>
+<p>User&rsquo;s watchlist view with Green edit button to go to series tracking
+view, Blue toggle button to move series to completed and Red Delete
+Button to remove series from watchlist</p>
+<p>
+  <img src="/.res/project-maikutlo/image23.png" alt="">
+
+</p>
+<h3 id="populated-user-watchlist-pictured-above">Populated User watchlist pictured above</h3>
+<p>
+  <img src="/.res/project-maikutlo/image24.png" alt="">
+
+</p>
+<p>After clicking the delete button the series is then deleted from the
+watchlist</p>
+<h3 id="users-series-editing-and-tracking">Users Series Editing and Tracking</h3>
+<p>Once a user clicks on the Green edit button on the series card in the
+watchlist they will be redirected to the tracking and editing view where
+they can see details about their series and toggle episodes viewing
+status</p>
+<p>
+  <img src="/.res/project-maikutlo/image25.png" alt="">
+
+</p>
+<p>
+  <img src="/.res/project-maikutlo/image24.png" alt="">
+
+</p>
+<h3 id="users-watch-time-statistics">Users Watch Time Statistics</h3>
+<p>After clicking the green link which says &ldquo;Check your statistics&rdquo; the
+user will be redirected to a statistics page which will show them their
+hours watched per series</p>
+<p>
+  <img src="/.res/project-maikutlo/image26.png" alt="">
+
+</p>
+<h3 id="goal-setting">Goal Setting</h3>
+<p>Once a user is successfully logged in, they would be taken to the
+profile page, which welcomes them and provides a section for setting
+goals according to anything they aim to do more series related to, for
+example they would want to watch a certain genre more</p>
+<p>
+  <img src="/.res/project-maikutlo/image27.png" alt="">
+
+</p>
+<p>Here&rsquo;s an example of a goal being set:</p>
+<p>
+  <img src="/.res/project-maikutlo/image28.png" alt="">
+
+</p>
+<p>These goals can be also be edited in case of any typing errors done
+within the creation</p>
+<p>Here is how you would edit a goal:<br>
+The word action was just put in uppercase to show that the text does get
+edited</p>
+<p>
+  <img src="/.res/project-maikutlo/image29.png" alt="">
+
+</p>
+<p>Once you click save it would be displayed as it has been made in the
+editing page:</p>
+<p>Here the action is in uppercase as stated in the editing goals page</p>
+<p>
+  <img src="/.res/project-maikutlo/image30.png" alt="">
+
+</p>
+<p>Once a goal is no longer required it can be deleted</p>
+<p>The goal revolving the action genre will be deleted to show this:</p>
+<p>
+  <img src="/.res/project-maikutlo/image31.png" alt="">
+
+</p>
+<h3 id="edit-profile">Edit Profile</h3>
+<p>While the user is successfully logged in the edit profile page is also
+visible where the user can edit their personal credentials, such as
+username, email and password; or delete an account if it no longer
+necessary</p>
+<p>
+  <img src="/.res/project-maikutlo/image32.png" alt="">
+
+</p>
+<h3 id="colour-scheme-setup">Colour scheme setup</h3>
+<p>The first red button with the sun shape is the light mode colour scheme
+which is Maikutlo&rsquo;s default setup as seen below.</p>
+<p>
+  <img src="/.res/project-maikutlo/image33.png" alt="">
+
+</p>
+<p>The slightly indigo quarter crescent moon is an exciting colour scheme
+on reserve, the dark mode. Below is a snapshot of the texture it brings
+to the table.</p>
+<p>
+  <img src="/.res/project-maikutlo/image34.png" alt="">
+
+</p>
+<h3 id="top-navigation-button">Top navigation button</h3>
+<p>As you scroll up and down the website a red button on the bottom left
+pops out written with the words &ldquo;top&rdquo;. This button makes it easy for you
+to jump straight to the top of the web page when clicked.</p>
+<p>
+  <img src="/.res/project-maikutlo/image35.png" alt="">
+
+</p>
+<h2 id="glossary">Glossary</h2>
+<p>Card: Refers to the rectangle within which series details and buttons
+are placed on the browse and watchlist pages</p>
+<p>Watchlist: refers to the user view where series are stored</p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="" data-toggle="tooltip" data-placement="top" title="Maximium Intensity Flutter workout app">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+                
+<div id="disqus-comment"></div>
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/android" title="android">
+                            android
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/bash" title="bash">
+                            bash
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/bibliography" title="bibliography">
+                            bibliography
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/design" title="design">
+                            design
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/development" title="development">
+                            development
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/flask" title="flask">
+                            flask
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/flutter" title="flutter">
+                            flutter
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/imagemagick" title="imagemagick">
+                            imagemagick
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/inkscape" title="inkscape">
+                            inkscape
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/kotlin" title="kotlin">
+                            kotlin
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/linux" title="linux">
+                            linux
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/photography" title="photography">
+                            photography
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/php" title="php">
+                            php
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/programming" title="programming">
+                            programming
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/projects" title="projects">
+                            projects
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/python" title="python">
+                            python
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/referencing" title="referencing">
+                            referencing
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/research" title="research">
+                            research
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/tinkering" title="tinkering">
+                            tinkering
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/vim" title="vim">
+                            vim
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Reece&#39;s Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:reecepetersen98@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/rop98">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Reece&#39;s Blog 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+</body>
+</html>

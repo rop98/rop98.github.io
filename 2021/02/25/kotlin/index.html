@@ -36,7 +36,7 @@
 
     <title>Notes on Kotlin for sololearn course-Devlog | Reece&#39;s Blog</title>
 
-    <link rel="canonical" href="/2021/02/25/kotlin/">
+    <link rel="canonical" href="/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 
@@ -101,6 +101,8 @@
                     
 		    
                         <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/project/">PROJECTS</a></li>
                     
 
                     
@@ -343,30 +345,28 @@ println(total)
 
 var age = 24
 if (age &gt;= 18){
-  println(&quot;Welcome&quot;) // will print because greater than 18
+  println(&#34;Welcome&#34;) // will print because greater than 18
 }
 
 var age = 12
 if (age &gt;= 18){
-  println(&quot;Welcome&quot;)
+  println(&#34;Welcome&#34;)
 }
 else {
-  println(&quot;Not allowed&quot;)
+  println(&#34;Not allowed&#34;)
 }
 
 
 val num = -7
 if (num &gt; 0){
-  println(&quot;Positive&quot;)
+  println(&#34;Positive&#34;)
 }
 else if (num &lt; 0){
-  print(&quot;Negative&quot;)
+  print(&#34;Negative&#34;)
 }
 else {
-  println(&quot;Zero&quot;)
+  println(&#34;Zero&#34;)
 }
-
-
 </code></pre><h2 id="conditional-expressions-useful-val-num---7-n-val-result--if-num--0--positive-else-negative">Conditional Expressions useful (val num = -7 \n val result = if (num &gt; 0 ) &ldquo;Positive&rdquo; else &ldquo;Negative&rdquo;)</h2>
 <p>using if statements in assignment. so if you want a value to be something if an expression evaluates to true and different if it evaluates to false</p>
 <p>NOTE: If we have only one line of code, we can omit the curly braces for if else like ternary</p>
@@ -375,9 +375,9 @@ else {
 <pre tabindex="0"><code>val num = -5
 
 val result = when {
-  num &gt; 0 -&gt; &quot;Positive&quot;
-  num &lt; 0 -&gt; &quot;Negative&quot;
-  else -&gt; &quot;Zero&quot;
+  num &gt; 0 -&gt; &#34;Positive&#34;
+  num &lt; 0 -&gt; &#34;Negative&#34;
+  else -&gt; &#34;Zero&#34;
 }
 println(result)
 </code></pre><p>NOTE:Each branch in a when expression is represented by a condition, an arrow (-&gt;), and a result.
@@ -387,9 +387,9 @@ val age = 19
 
 val group = ￼ {
 
-age &gt;= 18 ￼ &quot;Adult&quot;
+age &gt;= 18 ￼ &#34;Adult&#34;
 
-else -&gt; &quot;Child&quot;
+else -&gt; &#34;Child&#34;
 }
 ￼
 </code></pre><h3 id="ternary---">Ternary (|| &amp;&amp; )</h3>
@@ -399,15 +399,15 @@ else -&gt; &quot;Child&quot;
 <p>For example, let&rsquo;s check if the value of num is in a certain range:</p>
 <pre tabindex="0"><code>var num = 42
 if(num &gt;= 18 &amp;&amp; num &lt;= 60) {
-   println(&quot;Yes&quot;) 
+   println(&#34;Yes&#34;) 
 }
 KT￼Try it Yourself
 Both conditions should be true for the &amp;&amp; operator to evaluate to true.
 
 Similarly, the or || operator can be used to check if any one of the conditions is true
-var name = &quot;John&quot;
- if(name == &quot;Jon&quot; || name == &quot;John&quot;) {
-   println(&quot;Hi there&quot;)
+var name = &#34;John&#34;
+ if(name == &#34;Jon&#34; || name == &#34;John&#34;) {
+   println(&#34;Hi there&#34;)
 }
 KT￼Try it Yourself
 You can combine as many conditions as you want.
@@ -415,7 +415,7 @@ You can combine as many conditions as you want.
 <p>while loop is used to repeat block of code until given condition is true (incrementing or going through an array)</p>
 <pre tabindex="0"><code>var i = 1
 while (i &lt;= 5){
-  println(&quot;Hello world&quot;)
+  println(&#34;Hello world&#34;)
   i++
 }
 </code></pre><h3 id="using-a-while-loop-to-calculate-sum-of-numbers-from-1-to-100">Using a while loop to calculate sum of numbers from 1 to 100</h3>
@@ -464,16 +464,15 @@ array[index] = &ldquo;newValue&rdquo;</li>
 <pre tabindex="0"><code>for (ar in arrayname){
   println(ar)
 }
-
 </code></pre><ul>
 <li>TIP: for loop to print chars in a string          .//  [ for (char in stringVar){println(char)} ]</li>
 <li>TIP: for loop to print map key value pairs        .//  [  for(key in map.keys){ println(key.toString()+&rdquo; - &ldquo;+map[key]) } ]</li>
 <li>TIP: for loop example with access index of the element in the iterable</li>
 <li>TIP: for loop example with access index of the element in the iterable</li>
 </ul>
-<pre tabindex="0"><code>var daysOfWeek = listOf(&quot;Sunday&quot;,&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;)
+<pre tabindex="0"><code>var daysOfWeek = listOf(&#34;Sunday&#34;,&#34;Monday&#34;,&#34;Tuesday&#34;,&#34;Wednesday&#34;,&#34;Thursday&#34;,&#34;Friday&#34;,&#34;Saturday&#34;)
 
-for((index,day) in daysOfWeek.withIndex()){ println(&quot;$index :$day&quot;) }
+for((index,day) in daysOfWeek.withIndex()){ println(&#34;$index :$day&#34;) }
 
 /*
 Output
@@ -490,12 +489,12 @@ Output
 <li>Checking if a value is in a range</li>
 </ul>
 <pre tabindex="0"><code>var x = 42
-if (x in 1..50){println(&quot;yes&quot;)} // prints yes
+if (x in 1..50){println(&#34;yes&#34;)} // prints yes
 </code></pre><ul>
 <li>Checking if a value is in a array</li>
 </ul>
 <pre tabindex="0"><code>var nums = arrayOf(1, 2, 4, 6, 8, 10, 12)
-if (5 in nums){println(&quot;yes&quot;)} // prints nothing because 5 is not in nums
+if (5 in nums){println(&#34;yes&#34;)} // prints nothing because 5 is not in nums
 </code></pre><ul>
 <li>To iterate a number range which does not include its end element, use the until function:</li>
 </ul>
@@ -506,7 +505,7 @@ if (5 in nums){println(&quot;yes&quot;)} // prints nothing because 5 is not in n
 <pre tabindex="0"><code>//bingo
 var num = readLine()!!.toInt() 
 if(num in 50..  100) {
-  println(&quot; Bingo!  &quot;)
+  println(&#34; Bingo!  &#34;)
 }
 
 //division 
@@ -521,7 +520,7 @@ for(x in r) {
 <li>NOTE: ranges include the starting and ending value for (x in &lsquo;a&rsquo;..&lsquo;c&rsquo;) will print 3 characters</li>
 <li>TIP: for loop to print in a range                 .// [ for (i in 1..10){println(i)} ]</li>
 <li>TIP: for loop to print in a range with a step of 2.// [ for (i in 1..10 step 2){println(i)} ]</li>
-<li>TIP: for loop for ranges of characters            .// [for (x in &lsquo;a&rsquo;..&lsquo;e&rsquo;) { println(x) } ]</li>
+<li>TIP: for loop for ranges of characters            .// [for (x in &lsquo;a&rsquo;..&rsquo;e&rsquo;) { println(x) } ]</li>
 </ul>
 <h2 id="parking-fee-problem">Parking fee problem</h2>
 <p>Parking Fee</p>
@@ -540,7 +539,7 @@ The fee is calculated based on the following price structure:</p>
 <p>Explanation: The first 5 hours are billed at $1/hour, which results in $5. After that, the next 3 hours are billed at $0.5/hour = $1.5.
 So, the total would be $5+$1.5 = $6.5</p>
 <pre tabindex="0"><code>fun parkingFee(){
-  println(&quot;Please input hours parked&quot;)
+  println(&#34;Please input hours parked&#34;)
   var hours = readLine()!!.toInt()
     var total: Double = 0.0
     var days: Double = 0.0
@@ -583,11 +582,11 @@ So, the total would be $5+$1.5 = $6.5</p>
 fun main(args; Array&lt;String&gt;){var arr = arrayOf(1, 3, 9); arr.forEach{ item -&gt; println(item * 10); }})
 
 fun main(args; Array&lt;String&gt;){
-  var array1 = arrayOf(&quot;amy&quot;,&quot;billy&quot;,&quot;chris&quot;,&quot;donald
+  var array1 = arrayOf(&#34;amy&#34;,&#34;billy&#34;,&#34;chris&#34;,&#34;donald
       array1.forEach{
-      item -&gt; println(&quot;name&quot;+item)
+      item -&gt; println(&#34;name&#34;+item)
       } 
-  &quot;)
+  &#34;)
 }
 </code></pre><ul>
 <li>
@@ -658,7 +657,7 @@ fun f(x; String): Int {
     return z
 }
 fun main(args: Array&lt;String&gt;){
-  println(f(&quot;hello&quot;))// prints 5 as there are 5 letters in hello
+  println(f(&#34;hello&#34;))// prints 5 as there are 5 letters in hello
 }
 What is the output of this code?
 
@@ -674,7 +673,6 @@ fun main(args: Array&lt;String&gt;) {
   println(res)//4 + 9 + 16
 }
 ￼
-
 </code></pre><h2 id="final-functions-problem-todo">FINAL FUNCTIONS PROBLEM TODO:</h2>
 <p>Shipping Calculator</p>
 <p>You are working on a eCommerce website and need to make a shipping cost calculator based on the order amount.
@@ -708,8 +706,7 @@ fun main(args: Array&lt;String&gt;) {
     val international = readLine()!!.toBoolean()    
     println(shippingCost(total, international))
 }
-
-</code></pre><h2 id="classes--class-user--var-name--var-age--0--">Classes ( class User { var name =&quot;&quot;; var age = 0 } )</h2>
+</code></pre><h2 id="classes--class-user--var-name--var-age--0--">Classes ( class User { var name =&rdquo;&quot;; var age = 0 } )</h2>
 <h3 id="instantiating-objects--val-u1--user-u1namebradu1age23--u1-is-of-type-user">Instantiating objects ( val u1 = User(); u1.name=&ldquo;brad&rdquo;;u1.age=23 ) //u1 is of type User</h3>
 <h2 id="constructors-constructors-functions-to-initialize-properties-when-objects-are-created">Constructors (Constructors; functions to initialize properties when objects are created)</h2>
 <ul>
@@ -731,7 +728,7 @@ fun main(args: Array&lt;String&gt;) {
 <p>class ClassName(height:Double, weight:Double, name:String ){  }</p>
 </li>
 </ul>
-<pre tabindex="0"><code>class ClassName{ var height = 0.00; var weight = 0.00; var name=&quot;&quot;;
+<pre tabindex="0"><code>class ClassName{ var height = 0.00; var weight = 0.00; var name=&#34;&#34;;
   constructor(hgt:Double, wgt:Double, nm:String) {
     height = hgt
     weight = wgt
@@ -743,7 +740,7 @@ fun main(args: Array&lt;String&gt;) {
   constructor(wgt:Double, hgt:Double){
     weight = wgt
     height = hgt
-    name = &quot;default&quot;
+    name = &#34;default&#34;
   }
  }
 </code></pre><h2 id="getters--setters-class-uservar-name-get--field-setvaluefieldvalue">Getters &amp; Setters (class User{var name=&quot;&quot;; get() = field; set(value){field=value})</h2>
@@ -755,7 +752,7 @@ fun main(args: Array&lt;String&gt;) {
 </ul>
 <p>default syntax</p>
 <pre tabindex="0"><code>class User {
-  var name = &quot;&quot;
+  var name = &#34;&#34;
   var age = 0
   get() = field
   set(value){
@@ -769,7 +766,7 @@ fun main(args: Array&lt;String&gt;) {
 </ul>
 <h3 id="modifying-the-defualt-getters-and-setters">Modifying the defualt getters and setters</h3>
 <pre tabindex="0"><code>class User {
-  var name = &quot;&quot;
+  var name = &#34;&#34;
   var age = 0
   get()=field-1 // user1.get(varn) will return whatever was set as varn -1
  
@@ -794,15 +791,15 @@ fun main(args: Array&lt;String&gt;) {
     if(age &gt;= 18)return true; else return false
   }
   fun login(){
-    println(&quot;Login from user &quot; + name)
+    println(&#34;Login from user &#34; + name)
     loggedInCount +=1
   }
-  fun logout(){println(&quot;Logout from user &quot; + name); loggedInCount -=1 }
+  fun logout(){println(&#34;Logout from user &#34; + name); loggedInCount -=1 }
     
 }
 fun main(args; Array&lt;String&gt;){
   var loggedInCount = 0
-  var u = User(&quot;Bradley&quot;, 19)
+  var u = User(&#34;Bradley&#34;, 19)
   u.login() // will print login from user bradley
   u.logout() // will print login from user bradley
   u.isAdult() // will print login from user bradley
@@ -859,7 +856,7 @@ Let&rsquo;s say we want to restrict access to the age property of our User class
 <pre tabindex="0"><code>class User(var name: String, private var age: Int) {
 }
 fun main(args: Array&lt;String&gt;) {
-  val u1 = User(&quot;Amy&quot;, 23)
+  val u1 = User(&#34;Amy&#34;, 23)
   println(u1.age)// over here we would use a getter to access age instead
 } 
 </code></pre><p>The code will cause an error, as age is not visible from the outside of the class.
@@ -908,7 +905,6 @@ class Moderator(name: String, age: Int, var country: String): User(name, age) {
 
 abstract class Vehicle(var name: String, var make: String, var model: String ){}
 class Car(var name: String, var make: String, var model: String, var wheels; Int): Vehicle(name,make,model) {  }
-
 </code></pre><ul>
 <li>Now, we cannot create any User/Vehicle objects. Instead, we need to use Admin or Moderator types.</li>
 <li>Abstract classes are always open, so you do not need to use the open keyword.</li>
@@ -925,11 +921,11 @@ class Car(var name: String, var make: String, var model: String, var wheels; Int
 }
 
 class Admin(name: String, age: Int): User(name, age) 
-  override fun display(){println(&quot;admin \n name: \t&quot;+name+&quot;\n age: \t&quot;+age)}
+  override fun display(){println(&#34;admin \n name: \t&#34;+name+&#34;\n age: \t&#34;+age)}
 }
 
 class Moderator(name: String, age: Int, var country: String): User(name, age) {
-  override fun display(){println(&quot;moderator \n name: \t&quot;+name+&quot;\n age: \t&quot;+age+&quot;\n country: \t&quot;+country)}
+  override fun display(){println(&#34;moderator \n name: \t&#34;+name+&#34;\n age: \t&#34;+age+&#34;\n country: \t&#34;+country)}
 }
 
 abstract class Vehicle(var name: String, var make: String, var model: String ){
@@ -957,8 +953,8 @@ The code in main takes track names from user input and calls the player function
     private var songs: Array&lt;String&gt; = arrayOf()
     //your code goes here
     fun add(track: String){songs += track}
-    fun show(){for (song in songs){println(song+&quot;\n&quot;)}}
-    fun play(){println(&quot;Playing &quot;+songs[0])}
+    fun show(){for (song in songs){println(song+&#34;\n&#34;)}}
+    fun play(){println(&#34;Playing &#34;+songs[0])}
     
 }
 fun main(args: Array&lt;String&gt;) {
@@ -966,7 +962,7 @@ fun main(args: Array&lt;String&gt;) {
      
     while(true) {
         var input = readLine()!!
-        if(input == &quot;stop&quot;) {
+        if(input == &#34;stop&#34;) {
             break
         }
         m.add(input)
@@ -974,8 +970,6 @@ fun main(args: Array&lt;String&gt;) {
     m.show()
     m.play()
 }
-
-
 </code></pre>
 
                 
@@ -984,13 +978,13 @@ fun main(args: Array&lt;String&gt;) {
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2020/12/06/imagemagick/" data-toggle="tooltip" data-placement="top" title="ImageMagick cheatsheet">&larr;
+                        <a href="" data-toggle="tooltip" data-placement="top" title="ImageMagick cheatsheet">&larr;
                             Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2021/04/22/phonecamera_backup/" data-toggle="tooltip" data-placement="top" title="Backing up and compressing phone pictures">Next
+                        <a href="" data-toggle="tooltip" data-placement="top" title="Backing up and compressing phone pictures">Next
                             Post &rarr;</a>
                     </li>
                     
@@ -1045,6 +1039,12 @@ fun main(args: Array&lt;String&gt;) {
                         
                         
                         
+                        <a href="/tags/bibliography" title="bibliography">
+                            bibliography
+                        </a>
+                        
+                        
+                        
                         <a href="/tags/design" title="design">
                             design
                         </a>
@@ -1053,6 +1053,18 @@ fun main(args: Array&lt;String&gt;) {
                         
                         <a href="/tags/development" title="development">
                             development
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/flask" title="flask">
+                            flask
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/flutter" title="flutter">
+                            flutter
                         </a>
                         
                         
@@ -1083,6 +1095,42 @@ fun main(args: Array&lt;String&gt;) {
                         
                         <a href="/tags/photography" title="photography">
                             photography
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/php" title="php">
+                            php
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/programming" title="programming">
+                            programming
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/projects" title="projects">
+                            projects
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/python" title="python">
+                            python
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/referencing" title="referencing">
+                            referencing
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/research" title="research">
+                            research
                         </a>
                         
                         
@@ -1169,7 +1217,7 @@ fun main(args: Array&lt;String&gt;) {
             
                 </ul>
 		<p class="copyright text-muted">
-                    Copyright &copy; Reece&#39;s Blog 2021
+                    Copyright &copy; Reece&#39;s Blog 2022
                     <br>
                     <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
                     <iframe
