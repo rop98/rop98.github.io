@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>graphviz on Reece&#39;s Blog</title>
+    <link>/tags/graphviz/</link>
+    <description>Recent content in graphviz on Reece&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>My Name</copyright><atom:link href="/tags/graphviz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Short notes on plantuml</title>
+      <link>/1/01/01/plantuml/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/plantuml/</guid>
+      <description>plantuml installing and running  sudo pacman -S graphviz plantuml plantuml (produces png)  state machine syntax [] = start node -&amp;gt; = coming from start node Pending = state name Pending : project = state transition name Lapsed -&amp;gt; [] = going to end node
+@startuml [*] -&amp;gt; Pending : Project Pending --&amp;gt; Active : [projectstartdate = currentdate] Active --&amp;gt; Lapsed : [projectfinishdate = currentdate] Lapsed --&amp;gt; [*] : after [6 months] @enduml Class diagram @startuml skinparam roundcorner 20 skinparam class { BackgroundColor #FFFFFF ArrowColor DarkGreen BorderColor DarkGreen } abstract class Person { #Id: string #name: string #age: int } class Employee { +Department: Department +Salary: Decimal } class Professor { +Expertise: String } class Student { +Grade: int +GradeLetter: Char +GraduationYear: Year +void UpdateGrade() } Person &amp;lt;|-- Employee Employee &amp;lt;|-- Professor Person &amp;lt;|-- Student @enduml Use case diagram @startuml left to right direction skinparam packageStyle rectangle actor Lecturer actor Student actor Admin rectangle University-System { Lecturer --&amp;gt; (Grade Exam) Lecturer --&amp;gt; (Manage Course) Lecturer ---&amp;gt; (Access Course Information) Student ---&amp;gt; (Access Course Information) Student ---&amp;gt; (Enroll in Course) Admin ---&amp;gt; (Access Course Information) Admin ---&amp;gt; (Manage Course) } @enduml @startuml left to right direction skinparam packageStyle rectangle skinparam roundcorner 20 skinparam usecase { BackgroundColor #FFFFFF ArrowColor DarkGreen BorderColor #5E00FF } actor Customer #white;line:5E00FF;line.</description>
+    </item>
+    
+  </channel>
+</rss>

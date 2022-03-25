@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>markdown on Reece&#39;s Blog</title>
+    <link>/tags/markdown/</link>
+    <description>Recent content in markdown on Reece&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>My Name</copyright><atom:link href="/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Short notes on writing documentation in markdown and asciidoc</title>
+      <link>/1/01/01/writingdocumentation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/writingdocumentation/</guid>
+      <description>Writing documentation in markdown and asciidoc references  Markdown Style Guide - Ciro Santilli  Tools  all numbers under 10 should be written in full npm install write-good  for strong formal technical writing, this is good. also handles general grammar and tone   Pip install proselint  proselint is nice bc python. It is subjective   gem install mdl  CocInstall coc-markdownlint  USAGE: mdl filename mdl uses rules can turn off rules with -r ~MD0013,etc coc-markdownlint uses mdl but asynchronously     Gem install kramdown-asciidoc  USAGE: kramdown pathtofile -o output sometimes you write in markdown when you want to submit something and forget.</description>
+    </item>
+    
+  </channel>
+</rss>

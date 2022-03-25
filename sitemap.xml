@@ -128,19 +128,23 @@
     <loc>/page/</loc>
     <lastmod>2015-04-03T02:13:50+00:00</lastmod>
   </url><url>
-    <loc>/1/01/01/phponlinux/</loc>
-  </url><url>
-    <loc>/1/01/01/plantuml/</loc>
-  </url><url>
-    <loc>/1/01/01/umltools/</loc>
-  </url><url>
-    <loc>/1/01/01/writingdocumentation/</loc>
-  </url><url>
     <loc>/search/placeholder/</loc>
   </url><url>
     <loc>/top/about/</loc>
   </url><url>
     <loc>/top/books/</loc>
+  </url><url>
+    <loc>/tags/documentation/</loc>
+  </url><url>
+    <loc>/tags/graphviz/</loc>
+  </url><url>
+    <loc>/tags/markdown/</loc>
+  </url><url>
+    <loc>/tags/mysql/</loc>
+  </url><url>
+    <loc>/1/01/01/phponlinux/</loc>
+  </url><url>
+    <loc>/tags/plantuml/</loc>
   </url><url>
     <loc>/top/archive/</loc>
   </url><url>
@@ -152,7 +156,15 @@
   </url><url>
     <loc>/search/</loc>
   </url><url>
+    <loc>/1/01/01/plantuml/</loc>
+  </url><url>
+    <loc>/1/01/01/writingdocumentation/</loc>
+  </url><url>
     <loc>/top/</loc>
+  </url><url>
+    <loc>/tags/uml/</loc>
+  </url><url>
+    <loc>/1/01/01/umltools/</loc>
   </url><url>
     <loc>/1/01/01/zenity/</loc>
   </url>

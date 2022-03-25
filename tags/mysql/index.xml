@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mysql on Reece&#39;s Blog</title>
+    <link>/tags/mysql/</link>
+    <description>Recent content in mysql on Reece&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>My Name</copyright><atom:link href="/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PHP and XAMPP on linux</title>
+      <link>/1/01/01/phponlinux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/phponlinux/</guid>
+      <description>References php builtin server undefined function undefined mysqli function php how to conect to dbs using pdo and mysql php detailed mysql and pdo crud
+Steps  install it with bitnami from their site it goes into opt lampp set up the ports configuration uncomment the mysqli extensions include the extension directory extension_dir = &amp;ldquo;/usr/lib/php/modules/&amp;rdquo; setup how to do the connection use /opt/lampp/bin/php to test properly change track_errors to off from on never use php always /opt/lampp/bin/php  FOR ME  figure out way to get phpserver to serve the mysqli modules mysqli_connect works but need to now use my way of accessing it use how i access it with mysqlroot i have to use 127.</description>
+    </item>
+    
+  </channel>
+</rss>
